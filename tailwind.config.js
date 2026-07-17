@@ -19,9 +19,10 @@ module.exports = {
         emerald: "#2d7a55",
       },
       fontFamily: {
-        display: ["Cinzel", "Georgia", "serif"],
-        occult: ['"Cinzel Decorative"', "Georgia", "serif"],
-        title: ["system-ui", "sans-serif"],
+        display: ['"Cormorant Garamond"', "Georgia", "serif"],
+        occult: ["UnifrakturMaguntia", '"Cormorant Garamond"', "serif"],
+        title: ["Cinzel", "Georgia", "serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
       },
       keyframes: {
         marquee: {

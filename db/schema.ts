@@ -15,7 +15,7 @@ export const products = pgTable("products", {
   category: text("category").notNull(),
   price: numeric("price", { precision: 10, scale: 2 }).notNull(),
   description: text("description").notNull().default(""),
-  details: text("details").notNull().default(""),
+  details: text("details").array().notNull().default([]),
   materials: text("materials").notNull().default(""),
   tags: text("tags").array().notNull().default([]),
   featured: boolean("featured").notNull().default(false),
