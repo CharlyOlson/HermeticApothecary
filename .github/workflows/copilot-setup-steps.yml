@@ -17,3 +17,5 @@ jobs:
     steps:
       - name: Pin Copilot model
         run: echo "COPILOT_MODEL=sweagent-capi:gpt-5.3-codex" >> "$GITHUB_ENV"
+      - name: Verify model pin
+        run: test "$COPILOT_MODEL" = "sweagent-capi:gpt-5.3-codex"
