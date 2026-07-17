@@ -1,11 +1,10 @@
 /**
- * Next.js config (ESM) — created to replace unsupported next.config.ts
- * This file enables the App Router (appDir) and sets reactStrictMode.
+ * Next.js config (ESM) — updated for Render/Next 14
+ * In Next 14, `appDir` is a top-level option (not under `experimental`).
  */
 
 export default {
   reactStrictMode: true,
-  experimental: {
-    appDir: true,
-  },
+  // Enable the App Router
+  appDir: true,
 };
