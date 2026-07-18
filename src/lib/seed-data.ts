@@ -81,7 +81,7 @@ export function generateReviews(product: Product): Review[] {
     id: i + 1,
     productId: product.id,
     author: REVIEW_AUTHORS[i % REVIEW_AUTHORS.length],
-    rating: i === 0 ? 5 : i === count - 1 ? Math.max(3, product.rating - 1) : product.rating,
+    rating: i === 0 ? 5 : i === count - 1 ? Math.max(3, Math.round(product.rating - 1)) : Math.round(product.rating),
     title: REVIEW_TITLES[i % REVIEW_TITLES.length],
     body: `I ordered the ${product.name} after seeing it on the altar feed and it's exactly what I needed. The quality is exceptional and it arrived perfectly packaged. This piece now has a permanent home in my space.`,
     verified: i % 3 !== 0,
