@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { db } from "../src/db";
 import { products, reviews, orders, orderItems, customOrders } from "../src/db/schema";
 import { PRODUCTS, generateReviews, SUBMISSIONS } from "../src/lib/seed-data";
