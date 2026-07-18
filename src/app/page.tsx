@@ -40,7 +40,7 @@ export default async function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24">
           <div>
             <Reveal>
-              <p className="eyebrow">Hermits Apothecary · Est. in the dark</p>
+              <p className="eyebrow">Hermetic Apothecary · Est. in the dark</p>
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-4 text-balance font-display text-5xl leading-[0.98] text-bone text-shadow-ritual sm:text-6xl lg:text-7xl">
@@ -245,7 +245,7 @@ export default async function HomePage() {
               We make the things we needed
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ash">
-              Hermits Apothecary began in a basement studio lit by a single
+              Hermetic Apothecary began in a basement studio lit by a single
               candle — a response to art that felt disposable and faith that
               felt like a cage. We make objects for people who left the church
               but kept the mystery: slow-made, small-batch, and
@@ -264,10 +264,10 @@ export default async function HomePage() {
       {/* QUOTE BAND */}
       <section className="mx-auto max-w-4xl px-5 py-24 text-center">
         <Reveal>
-          <p className="font-occult text-5xl leading-tight text-gold sm:text-6xl">
+          <p className="font-display text-5xl italic leading-tight text-gold sm:text-6xl">
             “Pray later. Hex now.”
           </p>
-          <p className="mt-6 text-sm uppercase tracking-[0.24em] text-ash">— Hermits Apothecary</p>
+          <p className="mt-6 text-sm uppercase tracking-[0.24em] text-ash">— Hermetic Apothecary</p>
         </Reveal>
       </section>
 

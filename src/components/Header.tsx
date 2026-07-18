@@ -15,7 +15,7 @@ export function Header() {
               <path d="M12 2l2.4 6.4L21 9l-5 4.2L17.6 20 12 16.4 6.4 20 8 13.2 3 9l6.6-.6z" />
             </svg>
           </span>
-          <span className="font-occult text-xl text-bone">Hermits Apothecary</span>
+          <span className="font-occult text-xl text-bone">Hermetic Apothecary</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm text-ash md:flex">
           <Link href="/gallery" className="hover:text-bone">Gallery</Link>

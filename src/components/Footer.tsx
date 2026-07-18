@@ -12,7 +12,7 @@ export function Footer() {
                 <path d="M12 2l2.4 6.4L21 9l-5 4.2L17.6 20 12 16.4 6.4 20 8 13.2 3 9l6.6-.6z" />
               </svg>
             </span>
-            <span className="font-occult text-2xl text-bone">Hermits Apothecary</span>
+            <span className="font-occult text-2xl text-bone">Hermetic Apothecary</span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-ash">
             Sacred objects for the beautifully damned. Art, ritual, and
@@ -49,7 +49,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-line/60 px-5 py-6 text-center text-[11px] uppercase tracking-[0.2em] text-ash/70">
-        © {new Date().getFullYear()} Hermits Apothecary — Made by hand, kept by hex.
+        © {new Date().getFullYear()} Hermetic Apothecary — Made by hand, kept by hex.
       </div>
     </footer>
   );
