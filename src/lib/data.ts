@@ -1,7 +1,7 @@
 import { db } from "@/db";
 import { products, reviews, customOrders } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
-import { PRODUCTS, getPieces as getStaticPieces, type Product, type Piece } from "@/lib/seed-data";
+import { PRODUCTS, generateReviews, getPieces as getStaticPieces, type Product, type Piece } from "@/lib/seed-data";
 export { getPieces } from "@/lib/seed-data";
 
 function dbProduct(row: typeof products.$inferSelect): Product {
@@ -96,7 +96,18 @@ export async function getReviews(productId: number): Promise<ReviewData[]> {
       createdAt: r.createdAt?.toISOString().slice(0, 10) ?? "",
     }));
   } catch {
-    return [];
+    const product = PRODUCTS.find((p) => p.id === productId);
+    if (!product) return [];
+    return generateReviews(product).map((r) => ({
+      id: String(r.id),
+      productId: r.productId,
+      author: r.author,
+      rating: r.rating,
+      title: r.title,
+      body: r.body,
+      verified: r.verified,
+      createdAt: r.createdAt,
+    }));
   }
 }
 
