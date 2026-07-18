@@ -16,6 +16,19 @@ jobs:
       contents: read
     steps:
       - name: Pin Copilot model
-        run: echo "COPILOT_MODEL=sweagent-capi:gpt-5.3-codex" >> "$GITHUB_ENV"
+        run: |
+          echo "COPILOT_MODEL=sweagent-capi:gpt-5.3-codex" >> "$GITHUB_ENV"
+          echo "COPILOT_FALLBACK_MODEL=sweagent-capi:gpt-5.3-codex" >> "$GITHUB_ENV"
       - name: Verify model pin
-        run: test "$COPILOT_MODEL" = "sweagent-capi:gpt-5.3-codex"
+        run: |
+          test "$COPILOT_MODEL" = "sweagent-capi:gpt-5.3-codex"
+          test "$COPILOT_FALLBACK_MODEL" = "sweagent-capi:gpt-5.3-codex"
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
