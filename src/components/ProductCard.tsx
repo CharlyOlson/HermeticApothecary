@@ -13,7 +13,7 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface/50 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40">
-      <Link href={`/product/${product.slug}`} className="relative block aspect-[4/5] overflow-hidden">
+      <Link href={`/product/${product.slug}`} aria-label={`View ${product.name}`} className="relative block aspect-[4/5] overflow-hidden">
         <ProductArt
           seed={product.artSeed}
           category={product.category}
