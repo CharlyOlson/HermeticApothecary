@@ -32,12 +32,14 @@ export function Newsletter() {
 
   if (sent) return <p className="text-sm text-gold">You&apos;re in the conclave. ✦</p>;
   return (
-    <form onSubmit={submit} className="flex gap-2">
-      <input type="email" aria-label="Email address" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" className="input flex-1 text-sm" required />
-      <button type="submit" className="btn-gold px-4 text-sm" disabled={submitting}>
-        {submitting ? "Joining..." : "Join"}
-      </button>
-      {error ? <p className="text-sm text-red-400">{error}</p> : null}
-    </form>
+    <div className="space-y-2">
+      <p className="min-h-5 text-sm text-red-400" aria-live="polite">{error}</p>
+      <form onSubmit={submit} className="flex gap-2">
+        <input type="email" aria-label="Email address" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" className="input flex-1 text-sm" required />
+        <button type="submit" className="btn-gold px-4 text-sm" disabled={submitting}>
+          {submitting ? "Joining..." : "Join"}
+        </button>
+      </form>
+    </div>
   );
 }
