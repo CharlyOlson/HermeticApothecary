@@ -8,7 +8,7 @@ export function Newsletter() {
     e.preventDefault();
     if (email.trim()) { setSent(true); setEmail(""); }
   }
-  if (sent) return <p className="text-sm text-gold">You're in the conclave. ✦</p>;
+  if (sent) return <p className="text-sm text-gold">You&apos;re in the conclave. ✦</p>;
   return (
     <form onSubmit={submit} className="flex gap-2">
       <input type="email" aria-label="Email address" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" className="input flex-1 text-sm" required />
