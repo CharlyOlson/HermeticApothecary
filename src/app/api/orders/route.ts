@@ -6,6 +6,16 @@ import { inArray } from "drizzle-orm";
 
 export const dynamic = "force-dynamic";
 
+interface RequestedItem {
+  productId: number;
+  quantity: number;
+}
+
+interface FinalizedItem extends RequestedItem {
+  name: string;
+  price: number;
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -27,18 +37,18 @@ export async function POST(req: Request) {
       return Response.json({ error: "Cart is empty" }, { status: 400 });
     }
 
-    const requestedItems = items
+    const requestedItems: RequestedItem[] = items
       .map((it: { productId?: number; quantity?: number }) => ({
         productId: Number(it.productId),
         quantity: Math.max(1, Math.round(Number(it.quantity) || 1)),
       }))
-      .filter((it: { productId: number }) => Number.isFinite(it.productId) && it.productId > 0);
+      .filter((it: RequestedItem) => Number.isFinite(it.productId) && it.productId > 0);
 
     if (requestedItems.length !== items.length) {
       return Response.json({ error: "Invalid cart items" }, { status: 400 });
     }
 
-    const productIds = [...new Set(requestedItems.map((it: { productId: number }) => it.productId))];
+    const productIds: number[] = [...new Set(requestedItems.map((it: RequestedItem) => it.productId))];
     const catalogRows = await db
       .select({ id: products.id, name: products.name, price: products.price })
       .from(products)
@@ -54,7 +64,7 @@ export async function POST(req: Request) {
       }
     }
 
-    const validated = requestedItems.map((it: { productId: number; quantity: number }) => {
+    const validated = requestedItems.map((it: RequestedItem): FinalizedItem | null => {
       const product = catalog.get(it.productId);
       if (!product) return null;
       return {
@@ -69,7 +79,7 @@ export async function POST(req: Request) {
       return Response.json({ error: "Unknown product in cart" }, { status: 400 });
     }
 
-    const finalizedItems = validated.filter((it): it is NonNullable<typeof it> => it !== null);
+    const finalizedItems = validated.filter((it): it is FinalizedItem => it !== null);
 
     const subtotal = finalizedItems.reduce((sum, it) => sum + it.price * it.quantity, 0);
     const total = calculateOrderTotal(roundCurrency(subtotal));
