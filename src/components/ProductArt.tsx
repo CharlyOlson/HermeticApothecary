@@ -26,12 +26,12 @@ export function ProductArt({ seed, category, className, index = 0 }: ProductArtP
   const h = hash(seed + index);
   const colors = PALETTE[category] ?? PALETTE["Art Prints"];
   const c1 = colors[h % colors.length];
-  const c2 = colors[(h >> 4) % colors.length];
-  const c3 = colors[(h >> 8) % colors.length];
-  const x1 = ((h >> 2) % 100);
-  const y1 = ((h >> 6) % 100);
-  const x2 = ((h >> 10) % 100);
-  const y2 = ((h >> 14) % 100);
+  const c2 = colors[(h >>> 4) % colors.length];
+  const c3 = colors[(h >>> 8) % colors.length];
+  const x1 = (h >>> 2) % 100;
+  const y1 = (h >>> 6) % 100;
+  const x2 = (h >>> 10) % 100;
+  const y2 = (h >>> 14) % 100;
   const r = 20 + (h % 40);
 
   return (
