@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     const requestedItems: RequestedItem[] = items
       .map((it: { productId?: number; quantity?: number }) => ({
         productId: Number(it.productId),
-        quantity: Math.max(1, Math.round(Number(it.quantity) || 1)),
+        quantity: Math.min(100, Math.max(1, Math.round(Number(it.quantity) || 1))),
       }))
       .filter((it: RequestedItem) => Number.isFinite(it.productId) && it.productId > 0);
 
