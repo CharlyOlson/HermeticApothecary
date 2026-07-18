@@ -16,7 +16,7 @@
   "dependencies": {
     "drizzle-kit": "^0.31.10",
     "drizzle-orm": "^0.45.2",
-    "next": "14.x",
+    "next": "15.x",
     "pg": "^8.0.0",
     "react": "18.x",
     "react-dom": "18.x",
