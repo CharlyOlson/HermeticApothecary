@@ -59,3 +59,9 @@ export const customOrders = pgTable("custom_orders", {
   status: text("status").notNull().default("open"),
   createdAt: timestamp("created_at").defaultNow(),
 });
+
+export const newsletterSubscribers = pgTable("newsletter_subscribers", {
+  id: serial("id").primaryKey(),
+  email: text("email").notNull().unique(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
