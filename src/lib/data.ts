@@ -1,7 +1,7 @@
 import { db } from "@/db";
 import { products, reviews, customOrders } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
-import { PRODUCTS, generateReviews, getPieces as getStaticPieces, type Product, type Piece } from "@/lib/seed-data";
+import { PRODUCTS, SUBMISSIONS, generateReviews, getPieces as getStaticPieces, type Product, type Piece } from "@/lib/seed-data";
 export { getPieces } from "@/lib/seed-data";
 
 function dbProduct(row: typeof products.$inferSelect): Product {
@@ -132,6 +132,13 @@ export async function getCustomOrders(): Promise<CustomOrderData[]> {
       createdAt: r.createdAt?.toISOString().slice(0, 10) ?? "",
     }));
   } catch {
-    return [];
+    return SUBMISSIONS.map((submission, index) => ({
+      id: index + 1,
+      author: submission.author ?? null,
+      vision: submission.vision,
+      category: submission.category,
+      status: "open",
+      createdAt: "",
+    }));
   }
 }
