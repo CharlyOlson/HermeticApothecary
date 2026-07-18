@@ -1,0 +1,2628 @@
+Ok we need another page also here is the page link, ++**https://hermeticapothecary.onrender.com/++**
+we need another loading page that is 18+ verified and its going to be called, House of Heathens, Harlots and Heretics. its going to be a same brand different name though so its like a brand side run for adults
+
+
+
+Ran commands
+2
+command
+
+$ pwd && git status --short --branch && ls
+stdout
+
+/home/user/HermeticApothecary
+## arena/019f76ef-hermeticapothecary
+LICENSE
+README.md
+SECURITY.md
+drizzle
+drizzle.config.ts
+eslint.config.mjs
+next-env.d.ts
+next.config.js
+package.json
+postcss.config.mjs
+scripts
+src
+tailwind.config.js
+tsconfig.json
+tsconfig.tsbuildinfo
+yarn.lock
+command
+
+$ find src -maxdepth 4 -type f | sort | sed 's#^#/#' | head -200 && echo '--- package' && cat package.json
+stdout
+
+/src/app/api/custom-orders/route.ts
+/src/app/api/health/route.ts
+/src/app/api/newsletter/route.ts
+/src/app/api/orders/route.ts
+/src/app/api/reviews/route.ts
+/src/app/checkout/page.tsx
+/src/app/checkout/success/page.tsx
+/src/app/gallery/page.tsx
+/src/app/globals.css
+/src/app/layout.tsx
+/src/app/page.tsx
+/src/app/product/[slug]/page.tsx
+/src/app/shop/page.tsx
+/src/app/submit/page.tsx
+/src/components/AddToCart.tsx
+/src/components/CartDrawer.tsx
+/src/components/CartProvider.tsx
+/src/components/Footer.tsx
+/src/components/GalleryView.tsx
+/src/components/Header.tsx
+/src/components/Newsletter.tsx
+/src/components/OpenPrints.tsx
+/src/components/ProductArt.tsx
+/src/components/ProductCard.tsx
+/src/components/ProductGallery.tsx
+/src/components/Providers.tsx
+/src/components/Reveal.tsx
+/src/components/ReviewSection.tsx
+/src/components/ShopClient.tsx
+/src/components/StarRating.tsx
+/src/db/index.ts
+/src/db/schema.ts
+/src/lib/data.ts
+/src/lib/format.ts
+/src/lib/orders.ts
+/src/lib/seed-data.ts
+--- package
+{
+  "name": "hermetic-apothecary",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "drizzle-kit migrate && next build",
+    "lint": "next lint",
+    "seed": "tsx ./scripts/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "drizzle-kit": "^0.31.10",
+    "drizzle-orm": "^0.45.2",
+    "next": "15.x",
+    "pg": "^8.0.0",
+    "react": "18.x",
+    "react-dom": "18.x",
+    "tailwindcss": "^3.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.6",
+    "@types/node": "^26.1.1",
+    "@types/pg": "^8.20.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8.0.0",
+    "tsx": "^4.23.1",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "packageManager": "yarn@1.22.22"
+}
+
+Explored
+8 reads
+Read
+page.tsx
+Read
+layout.tsx
+Read
+Providers.tsx
+Read
+globals.css
+Read
+tailwind.config.js
+Read
+Header.tsx
+Read
+Footer.tsx
+Read
+tsconfig.json
+command
+
+$ find src/app -maxdepth 3 -type f -name 'loading.tsx' -o -name 'not-found.tsx' -o -name 'page.tsx' | sort
+stdout
+
+src/app/checkout/page.tsx
+src/app/checkout/success/page.tsx
+src/app/gallery/page.tsx
+src/app/page.tsx
+src/app/product/[slug]/page.tsx
+src/app/shop/page.tsx
+src/app/submit/page.tsx
+
+Explored
+1 read
+Read
+ProductArt.tsx
+command
+
+$ test -d node_modules && echo node_modules-present || echo no-node-modules && ls -la | head -40
+stdout
+
+no-node-modules
+total 407
+drwxr-xr-x 7 user user   4096 Jul 18 20:34 .
+drwx------ 3 user user    128 Jul 18 20:34 ..
+-rw-r--r-- 1 user user     42 Jul 18 20:34 .eslintrc.json
+drwxr-xr-x 8 user user   4096 Jul 18 20:34 .git
+drwxr-xr-x 3 user user     60 Jul 18 20:34 .github
+-rw-r--r-- 1 user user     26 Jul 18 20:34 .gitignore
+-rw-r--r-- 1 user user  18092 Jul 18 20:34 LICENSE
+-rw-r--r-- 1 user user     20 Jul 18 20:34 README.md
+-rw-r--r-- 1 user user    619 Jul 18 20:34 SECURITY.md
+drwxr-xr-x 3 user user   4096 Jul 18 20:34 drizzle
+-rw-r--r-- 1 user user    221 Jul 18 20:34 drizzle.config.ts
+-rw-r--r-- 1 user user    379 Jul 18 20:34 eslint.config.mjs
+-rw-r--r-- 1 user user    228 Jul 18 20:34 next-env.d.ts
+-rw-r--r-- 1 user user    120 Jul 18 20:34 next.config.js
+-rw-r--r-- 1 user user   1031 Jul 18 20:34 package.json
+-rw-r--r-- 1 user user    105 Jul 18 20:34 postcss.config.mjs
+drwxr-xr-x 2 user user     60 Jul 18 20:34 scripts
+drwxr-xr-x 6 user user     60 Jul 18 20:34 src
+-rw-r--r-- 1 user user    900 Jul 18 20:34 tailwind.config.js
+-rw-r--r-- 1 user user    576 Jul 18 20:34 tsconfig.json
+-rw-r--r-- 1 user user 161421 Jul 18 20:34 tsconfig.tsbuildinfo
+-rw-r--r-- 1 user user 188057 Jul 18 20:34 yarn.lock
+
+Edited files
++276
+−10
+
+Explored
+2 reads
+Read
+README.md
+Read
+Newsletter.tsx
+Write
+src/components/HouseOfHeathensLanding.tsx
++244
+src/components/HouseOfHeathensLanding.tsx
++244
+"use client";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Newsletter } from "./Newsletter";
+const HOUSE_AGE_KEY = "hermetic-house-of-heathens-age-verified";
+type GateState = "checking" | "locked" | "verified";
+const houseRules = [
+  "Adults only: you confirm you are 18 years of age or older.",
+  "After-dark language, provocative themes, and unruly devotional art may appear beyond this threshold.",
+  "No shame, no minors, no borrowed cages — consent and self-possession are the house law.",
+];
+const offerings = [
+  {
+    title: "After-dark drops",
+    body: "Limited runs with the same Hermetic Apothecary handwork, sharpened for the grown and ungovernable.",
+  },
+  {
+    title: "Unholy apparel",
+    body: "Tees, relics, and ritual objects with adult humor, body-positive mischief, and blasphemous bite.",
+  },
+  {
+    title: "Private commissions",
+    body: "Custom confessions and personal symbols translated into art for people old enough to own the story.",
+  },
+];
+function setVerified(value: boolean) {
+  try {
+    if (value) {
+      window.localStorage.setItem(HOUSE_AGE_KEY, "true");
+    } else {
+      window.localStorage.removeItem(HOUSE_AGE_KEY);
+    }
+  } catch {
+    // Some browsers block storage. The in-memory gate state still updates.
+  }
+}
+export function HouseOfHeathensLanding() {
+  const [gateState, setGateState] = useState<GateState>("checking");
+  useEffect(() => {
+    try {
+      setGateState(window.localStorage.getItem(HOUSE_AGE_KEY) === "true" ? "verified" : "locked");
+    } catch {
+      setGateState("locked");
+    }
+  }, []);
+  function enterHouse() {
+    setVerified(true);
+    setGateState("verified");
+  }
+  function lockHouse() {
+    setVerified(false);
+    setGateState("locked");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  if (gateState === "checking") {
+    return (
+      <section className="relative grid min-h-[calc(100vh-4rem)] place-items-center overflow-hidden px-5 py-24 grain">
+        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold/20 bg-gold/10 blur-3xl" />
+        <div className="relative text-center">
+          <p className="eyebrow">Checking the threshold</p>
+          <h1 className="mt-4 font-display text-5xl text-bone sm:text-6xl">18+ verification</h1>
+          <p className="mt-4 text-sm uppercase tracking-[0.24em] text-ash">House key loading...</p>
+        </div>
+      </section>
+    );
+  }
+  if (gateState === "locked") {
+    return (
+      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden px-5 py-16 grain sm:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(140,47,57,0.26),transparent_38%),radial-gradient(circle_at_10%_80%,rgba(201,162,75,0.16),transparent_32%),linear-gradient(180deg,rgba(10,9,12,0.2),#0a090c)]" />
+        <div className="absolute left-1/2 top-16 h-64 w-64 -translate-x-1/2 rounded-full border border-gold/20 bg-wine/30 blur-3xl" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <p className="eyebrow">Hermetic Apothecary presents · Adults only</p>
+            <h1 className="mt-5 text-balance font-display text-5xl leading-[0.95] text-bone text-shadow-ritual sm:text-7xl lg:text-8xl">
+              House of Heathens, Harlots and Heretics
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ash">
+              Same altar, later hour. This is the 18+ side room for the beautiful,
+              the banished, and the fully grown — a sister brand for adult
+              themes, darker jokes, and unapologetic self-possession.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <span className="chip border-gold/40 text-gold-soft">18+ verified</span>
+              <span className="chip border-blood/50 text-bone">After dark</span>
+              <span className="chip border-violet/50 text-ash">Same brand bloodline</span>
+            </div>
+          </div>
+          <div className="relative rounded-[2rem] border border-gold/30 bg-surface/80 p-6 shadow-2xl backdrop-blur md:p-8">
+            <div className="absolute -right-4 -top-4 hidden rounded-full border border-gold/40 bg-void px-4 py-2 font-title text-[11px] uppercase tracking-[0.22em] text-gold md:block">
+              Age Gate
+            </div>
+            <div className="rounded-[1.5rem] border border-line bg-ink/70 p-6">
+              <p className="font-occult text-4xl text-gold">Enter if invited</p>
+              <h2 className="mt-4 font-display text-3xl text-bone">Confirm the house rules</h2>
+              <ul className="mt-6 space-y-4 text-sm leading-relaxed text-ash">
+                {houseRules.map((rule) => (
+                  <li key={rule} className="flex gap-3">
+                    <span className="mt-1 text-gold">✦</span>
+                    <span>{rule}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <button type="button" onClick={enterHouse} className="btn-gold">
+                  I am 18+ · Enter
+                </button>
+                <Link href="/" className="btn-outline-light">
+                  Under 18 · Leave
+                </Link>
+              </div>
+              <p className="mt-5 text-xs leading-relaxed text-ash/70">
+                By entering, you self-certify that you are legally old enough to
+                view adult-themed content in your location.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  return (
+    <div className="overflow-hidden">
+      <section className="relative overflow-hidden px-5 py-16 grain sm:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_0%,rgba(94,31,42,0.38),transparent_42%),radial-gradient(circle_at_15%_30%,rgba(124,92,191,0.16),transparent_34%)]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="eyebrow">18+ verified · Hermetic Apothecary after dark</p>
+            <h1 className="mt-5 text-balance font-display text-5xl leading-[0.95] text-bone text-shadow-ritual sm:text-7xl lg:text-8xl">
+              House of Heathens, Harlots and Heretics
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ash">
+              The adult side-run of Hermetic Apothecary — same handcrafted
+              ritual energy, a sharper tongue, and a candle lit for every person
+              who was told they were too much.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/shop" className="btn-gold">
+                Shop Hermetic Apothecary
+              </Link>
+              <Link href="/submit" className="btn-outline-light">
+                Request an after-dark custom
+              </Link>
+            </div>
+            <button
+              type="button"
+              onClick={lockHouse}
+              className="mt-5 text-xs uppercase tracking-[0.22em] text-ash underline-offset-4 hover:text-bone hover:underline"
+            >
+              Lock this 18+ gate again
+            </button>
+          </div>
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-gold/30 bg-ink shadow-2xl">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_20%,rgba(201,162,75,0.42),transparent_22%),radial-gradient(circle_at_68%_55%,rgba(140,47,57,0.62),transparent_30%),linear-gradient(145deg,#110e16,#0a090c_62%)]" />
+            <div className="absolute inset-x-10 top-12 h-px bg-gold/40" />
+            <div className="absolute inset-y-10 left-1/2 w-px bg-gold/30" />
+            <div className="absolute left-1/2 top-1/2 grid h-52 w-52 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-gold/40 bg-void/70 text-center backdrop-blur">
+              <div>
+                <p className="font-occult text-6xl text-gold">HHH</p>
+                <p className="mt-2 font-title text-[10px] uppercase tracking-[0.28em] text-ash">House key accepted</p>
+              </div>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-void via-void/80 to-transparent p-7">
+              <p className="font-title text-[11px] uppercase tracking-[0.24em] text-gold">Loading page live</p>
+              <p className="mt-2 font-display text-3xl text-bone">The adults-only annex is awakening.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="border-y border-line bg-ink/50 py-3">
+        <div className="flex gap-10 overflow-hidden whitespace-nowrap">
+          <div className="flex shrink-0 animate-[marquee_28s_linear_infinite] gap-10 font-title text-[12px] uppercase tracking-[0.3em] text-ash/70">
+            {Array.from({ length: 2 }).flatMap((_, k) =>
+              ["Heathens", "Harlots", "Heretics", "Adults Only", "No Shame", "House Rules", "After Dark", "Hail Yourself"].map(
+                (word) => (
+                  <span key={`${k}-${word}`} className="flex items-center gap-10">
+                    {word}
+                    <span className="text-gold">✦</span>
+                  </span>
+                ),
+              ),
+            )}
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-7xl px-5 py-20">
+        <div className="max-w-2xl">
+          <p className="eyebrow">The adult side-run</p>
+          <h2 className="mt-3 font-display text-4xl text-bone sm:text-5xl">Same brand. Different hour.</h2>
+          <p className="mt-4 text-ash">
+            House of Heathens, Harlots and Heretics keeps the Hermetic Apothecary
+            texture — gothic, handmade, ritual-minded — and turns the volume up
+            for mature collectors and adult customs.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {offerings.map((offering) => (
+            <article key={offering.title} className="card p-6">
+              <p className="font-title text-[11px] uppercase tracking-[0.24em] text-gold">House offering</p>
+              <h3 className="mt-3 font-display text-3xl text-bone">{offering.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ash">{offering.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="mx-auto max-w-7xl px-5 pb-24">
+        <div className="relative overflow-hidden rounded-[2rem] border border-gold/30 bg-gradient-to-br from-wine/60 via-surface to-ink p-8 md:p-12">
+          <div className="absolute -right-10 -top-10 h-52 w-52 rounded-full bg-gold/10 blur-3xl" />
+          <div className="relative grid gap-8 md:grid-cols-[1fr_0.9fr] md:items-center">
+            <div>
+              <p className="eyebrow">House list</p>
+              <h2 className="mt-3 font-display text-4xl text-bone sm:text-5xl">Get the first after-dark omen</h2>
+              <p className="mt-4 max-w-xl text-ash">
+                Join the existing conclave list for launch notices, private drops,
+                and the first key when House pieces are ready to leave the cellar.
+              </p>
+            </div>
+            <Newsletter />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+Write
+src/app/house-of-heathens-harlots-and-heretics/page.tsx
++13
+src/app/house-of-heathens-harlots-and-heretics/page.tsx
++13
+import type { Metadata } from "next";
+import { HouseOfHeathensLanding } from "@/components/HouseOfHeathensLanding";
+export const metadata: Metadata = {
+  title: "House of Heathens, Harlots and Heretics — 18+ Verified",
+  description:
+    "The adults-only side room of Hermetic Apothecary: an 18+ verified landing page for after-dark drops, adult customs, and provocative occult art.",
+};
+export default function HouseOfHeathensPage() {
+  return <HouseOfHeathensLanding />;
+}
+Write
+src/app/house-of-heathens/page.tsx
++6
+src/app/house-of-heathens/page.tsx
++6
+import { redirect } from "next/navigation";
+export default function HouseOfHeathensShortRoute() {
+  redirect("/house-of-heathens-harlots-and-heretics");
+}
+
+Edit
+src/components/Header.tsx
++8
+−6
+×2
+src/components/Header.tsx
++8
+−6
+          <Link href="/gallery" className="hover:text-bone">Gallery</Link>
+          <Link href="/shop" className="hover:text-bone">Shop</Link>
+          <Link href="/submit" className="hover:text-bone">Submit</Link>
+          <Link href="/gallery" className="hover:text-bone">Gallery</Link>
+          <Link href="/shop" className="hover:text-bone">Shop</Link>
+          <Link href="/submit" className="hover:text-bone">Submit</Link>
+          <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft">18+ House</Link>
+          <Link href="/gallery" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+          <Link href="/shop" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+          <Link href="/submit" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Submit</Link>
+          <Link href="/gallery" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+          <Link href="/shop" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+          <Link href="/submit" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Submit</Link>
+          <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft" onClick={() => setIsMenuOpen(false)}>18+ House</Link>
+
+Edit
+src/components/Footer.tsx
++5
+−4
+src/components/Footer.tsx
++5
+−4
+            <li><Link href="/gallery" className="hover:text-bone">The Gallery</Link></li>
+            <li><Link href="/shop" className="hover:text-bone">Shop</Link></li>
+            <li><Link href="/submit" className="hover:text-bone">Submit Your Story</Link></li>
+            <li><Link href="/#confession-wall" className="hover:text-bone">Confession Wall</Link></li>
+            <li><Link href="/gallery" className="hover:text-bone">The Gallery</Link></li>
+            <li><Link href="/shop" className="hover:text-bone">Shop</Link></li>
+            <li><Link href="/submit" className="hover:text-bone">Submit Your Story</Link></li>
+            <li><Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft">18+ House</Link></li>
+… 1 more lines
+
+Ran commands
+7
+command
+
+$ sed -n '1,260p' src/components/HouseOfHeathensLanding.tsx && echo '--- header' && sed -n '1,100p' src/components/Header.tsx && echo '--- footer snippet' && sed -n '20,50p' src/components/Footer.tsx && echo '--- status' && git status --short
+stdout
+
+"use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Newsletter } from "./Newsletter";
+
+const HOUSE_AGE_KEY = "hermetic-house-of-heathens-age-verified";
+
+type GateState = "checking" | "locked" | "verified";
+
+const houseRules = [
+  "Adults only: you confirm you are 18 years of age or older.",
+  "After-dark language, provocative themes, and unruly devotional art may appear beyond this threshold.",
+  "No shame, no minors, no borrowed cages — consent and self-possession are the house law.",
+];
+
+const offerings = [
+  {
+    title: "After-dark drops",
+    body: "Limited runs with the same Hermetic Apothecary handwork, sharpened for the grown and ungovernable.",
+  },
+  {
+    title: "Unholy apparel",
+    body: "Tees, relics, and ritual objects with adult humor, body-positive mischief, and blasphemous bite.",
+  },
+  {
+    title: "Private commissions",
+    body: "Custom confessions and personal symbols translated into art for people old enough to own the story.",
+  },
+];
+
+function setVerified(value: boolean) {
+  try {
+    if (value) {
+      window.localStorage.setItem(HOUSE_AGE_KEY, "true");
+    } else {
+      window.localStorage.removeItem(HOUSE_AGE_KEY);
+    }
+  } catch {
+    // Some browsers block storage. The in-memory gate state still updates.
+  }
+}
+
+export function HouseOfHeathensLanding() {
+  const [gateState, setGateState] = useState<GateState>("checking");
+
+  useEffect(() => {
+    try {
+      setGateState(window.localStorage.getItem(HOUSE_AGE_KEY) === "true" ? "verified" : "locked");
+    } catch {
+      setGateState("locked");
+    }
+  }, []);
+
+  function enterHouse() {
+    setVerified(true);
+    setGateState("verified");
+  }
+
+  function lockHouse() {
+    setVerified(false);
+    setGateState("locked");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  if (gateState === "checking") {
+    return (
+      <section className="relative grid min-h-[calc(100vh-4rem)] place-items-center overflow-hidden px-5 py-24 grain">
+        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold/20 bg-gold/10 blur-3xl" />
+        <div className="relative text-center">
+          <p className="eyebrow">Checking the threshold</p>
+          <h1 className="mt-4 font-display text-5xl text-bone sm:text-6xl">18+ verification</h1>
+          <p className="mt-4 text-sm uppercase tracking-[0.24em] text-ash">House key loading...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (gateState === "locked") {
+    return (
+      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden px-5 py-16 grain sm:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(140,47,57,0.26),transparent_38%),radial-gradient(circle_at_10%_80%,rgba(201,162,75,0.16),transparent_32%),linear-gradient(180deg,rgba(10,9,12,0.2),#0a090c)]" />
+        <div className="absolute left-1/2 top-16 h-64 w-64 -translate-x-1/2 rounded-full border border-gold/20 bg-wine/30 blur-3xl" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <p className="eyebrow">Hermetic Apothecary presents · Adults only</p>
+            <h1 className="mt-5 text-balance font-display text-5xl leading-[0.95] text-bone text-shadow-ritual sm:text-7xl lg:text-8xl">
+              House of Heathens, Harlots and Heretics
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ash">
+              Same altar, later hour. This is the 18+ side room for the beautiful,
+              the banished, and the fully grown — a sister brand for adult
+              themes, darker jokes, and unapologetic self-possession.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <span className="chip border-gold/40 text-gold-soft">18+ verified</span>
+              <span className="chip border-blood/50 text-bone">After dark</span>
+              <span className="chip border-violet/50 text-ash">Same brand bloodline</span>
+            </div>
+          </div>
+
+          <div className="relative rounded-[2rem] border border-gold/30 bg-surface/80 p-6 shadow-2xl backdrop-blur md:p-8">
+            <div className="absolute -right-4 -top-4 hidden rounded-full border border-gold/40 bg-void px-4 py-2 font-title text-[11px] uppercase tracking-[0.22em] text-gold md:block">
+              Age Gate
+            </div>
+            <div className="rounded-[1.5rem] border border-line bg-ink/70 p-6">
+              <p className="font-occult text-4xl text-gold">Enter if invited</p>
+              <h2 className="mt-4 font-display text-3xl text-bone">Confirm the house rules</h2>
+              <ul className="mt-6 space-y-4 text-sm leading-relaxed text-ash">
+                {houseRules.map((rule) => (
+                  <li key={rule} className="flex gap-3">
+                    <span className="mt-1 text-gold">✦</span>
+                    <span>{rule}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <button type="button" onClick={enterHouse} className="btn-gold">
+                  I am 18+ · Enter
+                </button>
+                <Link href="/" className="btn-outline-light">
+                  Under 18 · Leave
+                </Link>
+              </div>
+              <p className="mt-5 text-xs leading-relaxed text-ash/70">
+                By entering, you self-certify that you are legally old enough to
+                view adult-themed content in your location.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <div className="overflow-hidden">
+      <section className="relative overflow-hidden px-5 py-16 grain sm:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_0%,rgba(94,31,42,0.38),transparent_42%),radial-gradient(circle_at_15%_30%,rgba(124,92,191,0.16),transparent_34%)]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="eyebrow">18+ verified · Hermetic Apothecary after dark</p>
+            <h1 className="mt-5 text-balance font-display text-5xl leading-[0.95] text-bone text-shadow-ritual sm:text-7xl lg:text-8xl">
+              House of Heathens, Harlots and Heretics
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ash">
+              The adult side-run of Hermetic Apothecary — same handcrafted
+              ritual energy, a sharper tongue, and a candle lit for every person
+              who was told they were too much.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/shop" className="btn-gold">
+                Shop Hermetic Apothecary
+              </Link>
+              <Link href="/submit" className="btn-outline-light">
+                Request an after-dark custom
+              </Link>
+            </div>
+            <button
+              type="button"
+              onClick={lockHouse}
+              className="mt-5 text-xs uppercase tracking-[0.22em] text-ash underline-offset-4 hover:text-bone hover:underline"
+            >
+              Lock this 18+ gate again
+            </button>
+          </div>
+
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-gold/30 bg-ink shadow-2xl">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_20%,rgba(201,162,75,0.42),transparent_22%),radial-gradient(circle_at_68%_55%,rgba(140,47,57,0.62),transparent_30%),linear-gradient(145deg,#110e16,#0a090c_62%)]" />
+            <div className="absolute inset-x-10 top-12 h-px bg-gold/40" />
+            <div className="absolute inset-y-10 left-1/2 w-px bg-gold/30" />
+            <div className="absolute left-1/2 top-1/2 grid h-52 w-52 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-gold/40 bg-void/70 text-center backdrop-blur">
+              <div>
+                <p className="font-occult text-6xl text-gold">HHH</p>
+                <p className="mt-2 font-title text-[10px] uppercase tracking-[0.28em] text-ash">House key accepted</p>
+              </div>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-void via-void/80 to-transparent p-7">
+              <p className="font-title text-[11px] uppercase tracking-[0.24em] text-gold">Loading page live</p>
+              <p className="mt-2 font-display text-3xl text-bone">The adults-only annex is awakening.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-line bg-ink/50 py-3">
+        <div className="flex gap-10 overflow-hidden whitespace-nowrap">
+          <div className="flex shrink-0 animate-[marquee_28s_linear_infinite] gap-10 font-title text-[12px] uppercase tracking-[0.3em] text-ash/70">
+            {Array.from({ length: 2 }).flatMap((_, k) =>
+              ["Heathens", "Harlots", "Heretics", "Adults Only", "No Shame", "House Rules", "After Dark", "Hail Yourself"].map(
+                (word) => (
+                  <span key={`${k}-${word}`} className="flex items-center gap-10">
+                    {word}
+                    <span className="text-gold">✦</span>
+                  </span>
+                ),
+              ),
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20">
+        <div className="max-w-2xl">
+          <p className="eyebrow">The adult side-run</p>
+          <h2 className="mt-3 font-display text-4xl text-bone sm:text-5xl">Same brand. Different hour.</h2>
+          <p className="mt-4 text-ash">
+            House of Heathens, Harlots and Heretics keeps the Hermetic Apothecary
+            texture — gothic, handmade, ritual-minded — and turns the volume up
+            for mature collectors and adult customs.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {offerings.map((offering) => (
+            <article key={offering.title} className="card p-6">
+              <p className="font-title text-[11px] uppercase tracking-[0.24em] text-gold">House offering</p>
+              <h3 className="mt-3 font-display text-3xl text-bone">{offering.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ash">{offering.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-24">
+        <div className="relative overflow-hidden rounded-[2rem] border border-gold/30 bg-gradient-to-br from-wine/60 via-surface to-ink p-8 md:p-12">
+          <div className="absolute -right-10 -top-10 h-52 w-52 rounded-full bg-gold/10 blur-3xl" />
+          <div className="relative grid gap-8 md:grid-cols-[1fr_0.9fr] md:items-center">
+            <div>
+              <p className="eyebrow">House list</p>
+              <h2 className="mt-3 font-display text-4xl text-bone sm:text-5xl">Get the first after-dark omen</h2>
+              <p className="mt-4 max-w-xl text-ash">
+                Join the existing conclave list for launch notices, private drops,
+                and the first key when House pieces are ready to leave the cellar.
+              </p>
+            </div>
+            <Newsletter />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+--- header
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { useCart } from "./CartProvider";
+
+export function Header() {
+  const { count, openCart } = useCart();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  return (
+    <header className="sticky top-0 z-40 border-b border-line bg-ink/80 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+        <Link href="/" className="flex items-center gap-2">
+          <span className="grid h-8 w-8 place-items-center rounded-full border border-gold/50 text-gold">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+              <path d="M12 2l2.4 6.4L21 9l-5 4.2L17.6 20 12 16.4 6.4 20 8 13.2 3 9l6.6-.6z" />
+            </svg>
+          </span>
+          <span className="font-occult text-xl text-bone">Hermetic Apothecary</span>
+        </Link>
+        <nav className="hidden items-center gap-6 text-sm text-ash md:flex">
+          <Link href="/gallery" className="hover:text-bone">Gallery</Link>
+          <Link href="/shop" className="hover:text-bone">Shop</Link>
+          <Link href="/submit" className="hover:text-bone">Submit</Link>
+          <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft">18+ House</Link>
+        </nav>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            className="grid h-10 w-10 place-items-center rounded-full border border-line text-ash hover:border-gold hover:text-gold md:hidden"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+              {isMenuOpen ? (
+                <path d="M18 6L6 18M6 6l12 12" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
+          </button>
+          <button onClick={openCart} className="relative grid h-10 w-10 place-items-center rounded-full border border-line text-ash hover:border-gold hover:text-gold" aria-label="Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            {count > 0 && (
+              <span className="absolute -right-1 -top-1 grid h-5 w-5 place-items-center rounded-full bg-gold text-[11px] font-bold text-void">{count > 9 ? "9+" : count}</span>
+            )}
+          </button>
+        </div>
+      </div>
+      <nav id="mobile-navigation" className={`${isMenuOpen ? "block" : "hidden"} border-t border-line px-5 py-4 text-sm text-ash md:hidden`}>
+        <div className="mx-auto flex max-w-7xl flex-col gap-3">
+          <Link href="/gallery" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+          <Link href="/shop" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+          <Link href="/submit" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Submit</Link>
+          <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft" onClick={() => setIsMenuOpen(false)}>18+ House</Link>
+        </div>
+      </nav>
+    </header>
+  );
+}
+--- footer snippet
+          </p>
+        </div>
+
+        <div>
+          <h4 className="font-title text-[12px] uppercase tracking-[0.22em] text-gold">Explore</h4>
+          <ul className="mt-4 space-y-2 text-sm text-ash">
+            <li><Link href="/gallery" className="hover:text-bone">The Gallery</Link></li>
+            <li><Link href="/shop" className="hover:text-bone">Shop</Link></li>
+            <li><Link href="/submit" className="hover:text-bone">Submit Your Story</Link></li>
+            <li><Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft">18+ House</Link></li>
+            <li><Link href="/#confession-wall" className="hover:text-bone">Confession Wall</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-title text-[12px] uppercase tracking-[0.22em] text-gold">The Shop</h4>
+          <ul className="mt-4 space-y-2 text-sm text-ash">
+            <li><Link href="/shop?category=Art+Prints" className="hover:text-bone">Art Prints</Link></li>
+            <li><Link href="/shop?category=Custom+Tees" className="hover:text-bone">Custom Tees</Link></li>
+            <li><Link href="/shop?category=Jewelry" className="hover:text-bone">Jewelry</Link></li>
+            <li><Link href="/shop?sort=rating" className="hover:text-bone">Most Loved</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-title text-[12px] uppercase tracking-[0.22em] text-gold">Join the Conclave</h4>
+          <p className="mt-4 text-sm text-ash">New pieces, private drops, and the occasional omen.</p>
+          <div className="mt-4">
+            <Newsletter />
+          </div>
+        </div>
+--- status
+ M src/components/Footer.tsx
+ M src/components/Header.tsx
+?? src/app/house-of-heathens-harlots-and-heretics/
+?? src/app/house-of-heathens/
+?? src/components/HouseOfHeathensLanding.tsx
+command
+
+$ git diff -- src/components/HouseOfHeathensLanding.tsx src/app/house-of-heathens-harlots-and-heretics/page.tsx src/app/house-of-heathens/page.tsx src/components/Header.tsx src/components/Footer.tsx
+stdout
+
+diff --git a/src/components/Footer.tsx b/src/components/Footer.tsx
+index cc4ff5d..3677ffb 100644
+--- a/src/components/Footer.tsx
++++ b/src/components/Footer.tsx
+@@ -26,6 +26,7 @@ export function Footer() {
+             <li><Link href="/gallery" className="hover:text-bone">The Gallery</Link></li>
+             <li><Link href="/shop" className="hover:text-bone">Shop</Link></li>
+             <li><Link href="/submit" className="hover:text-bone">Submit Your Story</Link></li>
++            <li><Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft">18+ House</Link></li>
+             <li><Link href="/#confession-wall" className="hover:text-bone">Confession Wall</Link></li>
+           </ul>
+         </div>
+diff --git a/src/components/Header.tsx b/src/components/Header.tsx
+index 4f8c712..c552f6b 100644
+--- a/src/components/Header.tsx
++++ b/src/components/Header.tsx
+@@ -21,6 +21,7 @@ export function Header() {
+           <Link href="/gallery" className="hover:text-bone">Gallery</Link>
+           <Link href="/shop" className="hover:text-bone">Shop</Link>
+           <Link href="/submit" className="hover:text-bone">Submit</Link>
++          <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft">18+ House</Link>
+         </nav>
+         <div className="flex items-center gap-2">
+           <button
+@@ -52,6 +53,7 @@ export function Header() {
+           <Link href="/gallery" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+           <Link href="/shop" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+           <Link href="/submit" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Submit</Link>
++          <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft" onClick={() => setIsMenuOpen(false)}>18+ House</Link>
+         </div>
+       </nav>
+     </header>
+command
+
+$ yarn install --frozen-lockfile
+stdout
+
+yarn install v1.22.22
+[1/5] Validating package.json...
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+stderr
+
+error hermetic-apothecary@0.1.0: The engine "node" is incompatible with this module. Expected version "20.x". Got "22.22.3"
+error Found incompatible module.
+command
+
+$ yarn install --frozen-lockfile --ignore-engines
+stdout
+
+yarn install v1.22.22
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+stderr
+
+error Error: Client network socket disconnected before secure TLS connection was established
+    at TLSSocket.onConnectEnd (node:internal/tls/wrap:1754:19)
+    at TLSSocket.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+error https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/android-x64/-/android-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/darwin-arm64/-/darwin-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/darwin-x64/-/darwin-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/freebsd-arm64/-/freebsd-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/freebsd-x64/-/freebsd-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-arm/-/linux-arm-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-arm64/-/linux-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-ia32/-/linux-ia32-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-mips64el/-/linux-mips64el-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-ppc64/-/linux-ppc64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-riscv64/-/linux-riscv64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-s390x/-/linux-s390x-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-x64/-/linux-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/netbsd-x64/-/netbsd-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/openbsd-arm64/-/openbsd-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/openbsd-x64/-/openbsd-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/openharmony-arm64/-/openharmony-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/sunos-x64/-/sunos-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/win32-arm64/-/win32-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/win32-ia32/-/win32-ia32-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+command
+
+$ git status --short && test -d node_modules && echo node_modules-present || echo no-node-modules && find . -maxdepth 2 -name 'yarn-error.log' -o -name '.yarn-integrity'
+stdout
+
+ M src/components/Footer.tsx
+ M src/components/Header.tsx
+?? src/app/house-of-heathens-harlots-and-heretics/
+?? src/app/house-of-heathens/
+?? src/components/HouseOfHeathensLanding.tsx
+no-node-modules
+command
+
+$ git diff --stat && git status --short
+stdout
+
+ src/components/Footer.tsx | 1 +
+ src/components/Header.tsx | 2 ++
+ 2 files changed, 3 insertions(+)
+ M src/components/Footer.tsx
+ M src/components/Header.tsx
+?? src/app/house-of-heathens-harlots-and-heretics/
+?? src/app/house-of-heathens/
+?? src/components/HouseOfHeathensLanding.tsx
+command
+
+$ command -v tsc || true; command -v next || true; command -v yarn; node --version
+stdout
+
+/usr/local/bin/yarn
+v22.22.3
+
+Edit
+src/components/HouseOfHeathensLanding.tsx
++2
+−2
+src/components/HouseOfHeathensLanding.tsx
++2
+−2
+              <span className="chip border-gold/40 text-gold-soft">18+ verified</span>
+              <span className="chip border-blood/50 text-bone">After dark</span>
+              <span className="chip border-gold/40 text-gold-soft">18+ verification</span>
+              <span className="chip border-blood/50 text-bone">After dark</span>
+
+Ran commands
+2
+command
+
+$ find src/app/house-of-heathens-harlots-and-heretics src/app/house-of-heathens -type f -maxdepth 2 -print -exec sed -n '1,80p' {} \;
+stdout
+
+src/app/house-of-heathens-harlots-and-heretics/page.tsx
+import type { Metadata } from "next";
+import { HouseOfHeathensLanding } from "@/components/HouseOfHeathensLanding";
+
+export const metadata: Metadata = {
+  title: "House of Heathens, Harlots and Heretics — 18+ Verified",
+  description:
+    "The adults-only side room of Hermetic Apothecary: an 18+ verified landing page for after-dark drops, adult customs, and provocative occult art.",
+};
+
+export default function HouseOfHeathensPage() {
+  return <HouseOfHeathensLanding />;
+}
+src/app/house-of-heathens/page.tsx
+import { redirect } from "next/navigation";
+
+export default function HouseOfHeathensShortRoute() {
+  redirect("/house-of-heathens-harlots-and-heretics");
+}
+command
+
+$ git status --short
+stdout
+
+ M src/components/Footer.tsx
+ M src/components/Header.tsx
+?? src/app/house-of-heathens-harlots-and-heretics/
+?? src/app/house-of-heathens/
+?? src/components/HouseOfHeathensLanding.tsx
+Done — I added the new 18+ age-gated loading/landing page for House of Heathens, Harlots and Heretics.
+
+What changed:
+
+New page: /house-of-heathens-harlots-and-heretics
+Short redirect alias: /house-of-heathens
+Added a client-side 18+ self-verification gate with:
+“I am 18+ · Enter”
+“Under 18 · Leave”
+localStorage persistence so verified visitors don’t have to re-enter every time
+a “Lock this 18+ gate again” option after entry
+Styled it as a same-brand adult side-run of Hermetic Apothecary.
+Added 18+ House links to the header and footer navigation.
+When deployed, it should be available at:
+
+https://hermeticapothecary.onrender.com/house-of-heathens-harlots-and-heretics
+
+Note: I attempted to run install/build checks, but this sandbox is on Node 22.22.3 while the project requires Node 20.x, and the follow-up install with ignored engines failed due registry TLS/network errors. The code changes are in place, but I couldn’t complete a local build verification here.
+
+
+whats the issue with changing it to work
+
+
+
+Edit
+package.json
++3
+−3
+package.json
++3
+−3
+  "engines": {
+    "node": "20.x"
+  },
+  "engines": {
+    "node": ">=20 <23"
+  },
+
+Ran commands
+2
+command
+
+$ yarn install --frozen-lockfile
+stdout
+
+yarn install v1.22.22
+[1/5] Validating package.json...
+[2/5] Resolving packages...
+[3/5] Fetching packages...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+info There appears to be trouble with your network connection. Retrying...
+stderr
+
+error Error: Client network socket disconnected before secure TLS connection was established
+    at TLSSocket.onConnectEnd (node:internal/tls/wrap:1754:19)
+    at TLSSocket.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+error https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/android-x64/-/android-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/darwin-arm64/-/darwin-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/darwin-x64/-/darwin-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/freebsd-arm64/-/freebsd-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/freebsd-x64/-/freebsd-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-arm/-/linux-arm-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-arm64/-/linux-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-ia32/-/linux-ia32-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-mips64el/-/linux-mips64el-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-ppc64/-/linux-ppc64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-riscv64/-/linux-riscv64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-s390x/-/linux-s390x-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/linux-x64/-/linux-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/netbsd-x64/-/netbsd-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/openbsd-arm64/-/openbsd-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/openbsd-x64/-/openbsd-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/openharmony-arm64/-/openharmony-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/sunos-x64/-/sunos-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/win32-arm64/-/win32-arm64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/win32-ia32/-/win32-ia32-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+error https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.25.12.tgz: Client network socket disconnected before secure TLS connection was established
+command
+
+$ git status --short && git diff -- package.json
+stdout
+
+ M package.json
+ M src/components/Footer.tsx
+ M src/components/Header.tsx
+?? src/app/house-of-heathens-harlots-and-heretics/
+?? src/app/house-of-heathens/
+?? src/components/HouseOfHeathensLanding.tsx
+diff --git a/package.json b/package.json
+index 73d864d..ab44648 100644
+--- a/package.json
++++ b/package.json
+@@ -36,7 +36,7 @@
+     "typescript": "^5.0.0"
+   },
+   "engines": {
+-    "node": "20.x"
++    "node": ">=20 <23"
+   },
+   "packageManager": "yarn@1.22.22"
+ }
+Not much issue — the only real concern is that changing the Node engine affects what environments are officially allowed to install/run the app.
+
+The repo had this:
+
+JSON
+
+"engines": {
+  "node": "20.x"
+}
+But this Arena sandbox is running Node 22.22.3, so Yarn refused to install. I changed it to:
+
+JSON
+
+"engines": {
+  "node": ">=20 <23"
+}
+That means the app now allows Node 20, 21, and 22.
+
+That should be safe here because:
+
+Next 15 supports modern Node versions.
+Render can still run it on Node 20.
+Arena can now attempt installs/builds on Node 22.
+We are not changing app logic, just the supported runtime range.
+The remaining issue is separate: after changing the engine, yarn install got past the Node version check, but the sandbox hit registry/TLS network errors while downloading packages from registry.yarnpkg.com. So the Node engine mismatch is fixed, but I still can’t complete a local install/build in this sandbox until the package registry connection works.
+
+
+ok can you change it in git hub by pulling a request?
+
+
+
+Ran commands
+6
+command
+
+$ git status --short --branch && git diff -- package.json src/components/Header.tsx src/components/Footer.tsx && git diff --stat
+stdout
+
+## arena/019f76ef-hermeticapothecary
+ M package.json
+ M src/components/Footer.tsx
+ M src/components/Header.tsx
+?? src/app/house-of-heathens-harlots-and-heretics/
+?? src/app/house-of-heathens/
+?? src/components/HouseOfHeathensLanding.tsx
+diff --git a/package.json b/package.json
+index 73d864d..ab44648 100644
+--- a/package.json
++++ b/package.json
+@@ -36,7 +36,7 @@
+     "typescript": "^5.0.0"
+   },
+   "engines": {
+-    "node": "20.x"
++    "node": ">=20 <23"
+   },
+   "packageManager": "yarn@1.22.22"
+ }
+diff --git a/src/components/Footer.tsx b/src/components/Footer.tsx
+index cc4ff5d..3677ffb 100644
+--- a/src/components/Footer.tsx
++++ b/src/components/Footer.tsx
+@@ -26,6 +26,7 @@ export function Footer() {
+             <li><Link href="/gallery" className="hover:text-bone">The Gallery</Link></li>
+             <li><Link href="/shop" className="hover:text-bone">Shop</Link></li>
+             <li><Link href="/submit" className="hover:text-bone">Submit Your Story</Link></li>
++            <li><Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft">18+ House</Link></li>
+             <li><Link href="/#confession-wall" className="hover:text-bone">Confession Wall</Link></li>
+           </ul>
+         </div>
+diff --git a/src/components/Header.tsx b/src/components/Header.tsx
+index 4f8c712..c552f6b 100644
+--- a/src/components/Header.tsx
++++ b/src/components/Header.tsx
+@@ -21,6 +21,7 @@ export function Header() {
+           <Link href="/gallery" className="hover:text-bone">Gallery</Link>
+           <Link href="/shop" className="hover:text-bone">Shop</Link>
+           <Link href="/submit" className="hover:text-bone">Submit</Link>
++          <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft">18+ House</Link>
+         </nav>
+         <div className="flex items-center gap-2">
+           <button
+@@ -52,6 +53,7 @@ export function Header() {
+           <Link href="/gallery" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+           <Link href="/shop" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+           <Link href="/submit" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Submit</Link>
++          <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft" onClick={() => setIsMenuOpen(false)}>18+ House</Link>
+         </div>
+       </nav>
+     </header>
+ package.json              | 2 +-
+ src/components/Footer.tsx | 1 +
+ src/components/Header.tsx | 2 ++
+ 3 files changed, 4 insertions(+), 1 deletion(-)
+command
+
+$ git add package.json src/components/Header.tsx src/components/Footer.tsx src/components/HouseOfHeathensLanding.tsx src/app/house-of-heathens-harlots-and-heretics/page.tsx src/app/house-of-heathens/page.tsx && git diff --cached --stat && git commit -m "Add 18+ House of Heathens landing page"
+stdout
+
+ package.json                                       |   2 +-
+ .../page.tsx                                       |  12 +
+ src/app/house-of-heathens/page.tsx                 |   5 +
+ src/components/Footer.tsx                          |   1 +
+ src/components/Header.tsx                          |   2 +
+ src/components/HouseOfHeathensLanding.tsx          | 243 +++++++++++++++++++++
+ 6 files changed, 264 insertions(+), 1 deletion(-)
+[arena/019f76ef-hermeticapothecary 59b1945] Add 18+ House of Heathens landing page
+ 6 files changed, 264 insertions(+), 1 deletion(-)
+ create mode 100644 src/app/house-of-heathens-harlots-and-heretics/page.tsx
+ create mode 100644 src/app/house-of-heathens/page.tsx
+ create mode 100644 src/components/HouseOfHeathensLanding.tsx
+command
+
+$ git push origin arena/019f76ef-hermeticapothecary
+stderr
+
+remote: 
+remote: Create a pull request for 'arena/019f76ef-hermeticapothecary' on GitHub by visiting:        
+remote:      https://github.com/CharlyOlson/HermeticApothecary/pull/new/arena/019f76ef-hermeticapothecary        
+remote: 
+To https://github.com/CharlyOlson/HermeticApothecary.git
+ * [new branch]      arena/019f76ef-hermeticapothecary -> arena/019f76ef-hermeticapothecary
+command
+
+$ gh pr list --head arena/019f76ef-hermeticapothecary --json number,title,url,state
+stdout
+
+[]
+command
+
+$ gh pr create --base main --head arena/019f76ef-hermeticapothecary --title "Add 18+ House of Heathens landing page" --body "## Summary - Add an 18+ verified landing/loading page for House of Heathens, Harlots and Heretics - Add a short /house-of-heathens redirect to the full page route - Link the 18+ House page from the header and footer - Broaden the Node engine range to support Node 20 through 22 ## Testing - Attempted \`yarn install --frozen-lockfile\`; after the Node engine range update, install was blocked by registry/TLS network errors fetching esbuild packages in the sandbox."
+stdout
+
+https://github.com/CharlyOlson/HermeticApothecary/pull/6
+command
+
+$ git status --short --branch
+stdout
+
+## arena/019f76ef-hermeticapothecary
+Done — I committed the changes, pushed the branch, and opened the GitHub pull request.
+
+PR: https://github.com/CharlyOlson/HermeticApothecary/pull/6
+
+Included in the PR:
+
+New 18+ page: /house-of-heathens-harlots-and-heretics
+Short redirect route: /house-of-heathens
+Header/footer links for 18+ House
+Node engine updated from 20.x to >=20 <23
+Note: I also documented in the PR that local install/build verification was blocked by registry/TLS network errors in the sandbox after the Node version issue was fixed.
+
+
+ok add a sign up to the house of heretics and make it a 5% discount on all regular orders and 25% off orders that are 101+$
+
+
+command
+
+$ find src -type f | sort | xargs sed -n '1,220p' | grep -n "discount\|coupon\|promo\|total\|subtotal\|checkout" -i | head -80
+stdout
+
+116:    total: Number(order.total),
+135:import { calculateOrderTotal, roundCurrency } from "@/lib/orders";
+215:    const subtotal = finalizedItems.reduce((sum, it) => sum + it.price * it.quantity, 0);
+216:    const total = calculateOrderTotal(roundCurrency(subtotal));
+
+Edited files
++287
+−57
+
+Explored
+6 reads
+Read
+page.tsx
+Read
+orders.ts
+Read
+route.ts
+Read
+route.ts
+Read
+schema.ts
+Read
+page.tsx
+Write
+src/lib/orders.ts
++65
+
+Edit
+src/app/api/orders/route.ts
++13
+−6
+×3
+src/app/api/orders/route.ts
++13
+−6
+import { calculateOrderTotal, roundCurrency } from "@/lib/orders";
+import { calculateOrderTotal, getDiscountForCode, roundCurrency } from "@/lib/orders";
+    const items = Array.isArray(body.items) ? body.items : [];
+    const customer = body.customer ?? {};
+    const items = Array.isArray(body.items) ? body.items : [];
+    const customer = body.customer ?? {};
+    const discountCode = String(body.discountCode ?? "").trim();
+    const subtotal = finalizedItems.reduce((sum, it) => sum + it.price * it.quantity, 0);
+    const total = calculateOrderTotal(roundCurrency(subtotal));
+    const accessToken = crypto.randomUUID();
+    const subtotal = roundCurrency(finalizedItems.reduce((sum, it) => sum + it.price * it.quantity, 0));
+    const appliedDiscount = discountCode ? getDiscountForCode(discountCode, subtotal) : null;
+    if (discountCode && !appliedDiscount) {
+      return Response.json({ error: "Invalid discount code" }, { status: 400 });
+… 4 more lines
+
+Edit
+src/app/checkout/page.tsx
++85
+−29
+×9
+src/app/checkout/page.tsx
++85
+−29
+import { calculateShipping, calculateOrderTotal } from "@/lib/orders";
+import {
+  HOUSE_DISCOUNT_CODE,
+  HOUSE_DISCOUNT_THRESHOLD,
+  calculateDiscountedSubtotal,
+  calculateOrderTotal,
+  calculateShipping,
+  getDiscountForCode,
+… 1 more lines
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [form, setForm] = useState({
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [discountCode, setDiscountCode] = useState("");
+  const [form, setForm] = useState({
+  const shipping = calculateShipping(total);
+  const grand = calculateOrderTotal(total);
+  const appliedDiscount = discountCode.trim() ? getDiscountForCode(discountCode, total) : null;
+  const discount = appliedDiscount?.amount ?? 0;
+  const discountedSubtotal = calculateDiscountedSubtotal(total, discount);
+  const shipping = calculateShipping(discountedSubtotal);
+  const grand = calculateOrderTotal(total, discount);
+  const hasInvalidDiscount = Boolean(discountCode.trim() && !appliedDiscount);
+    if (!items.length) {
+      setError("Your cart is empty.");
+      return;
+    }
+    setBusy(true);
+    if (!items.length) {
+      setError("Your cart is empty.");
+      return;
+… 6 more lines
+          customer: form,
+        }),
+          customer: form,
+          discountCode: appliedDiscount?.code,
+        }),
+      if (!res.ok) throw new Error("order failed");
+      const data = (await res.json()) as { id: number; total: number; accessToken: string };
+      if (!res.ok) {
+        const data = (await res.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(data?.error ?? "order failed");
+      }
+      const data = (await res.json()) as { id: number; total: number; accessToken: string };
+    } catch {
+      setError("The ritual was interrupted. Please try again.");
+      setBusy(false);
+    }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "The ritual was interrupted. Please try again.");
+      setBusy(false);
+    }
+          </ul>
+          <div className="mt-5 space-y-2 border-t border-line pt-4 text-sm">
+          </ul>
+          <div className="mt-5 rounded-xl border border-line bg-ink/50 p-4">
+            <label className="label">House discount code</label>
+            <input
+              className="input text-sm"
+              value={discountCode}
+… 20 more lines
+            <div className="flex justify-between text-ash">
+              <span>Subtotal</span>
+              <span className="text-bone">{formatPrice(total)}</span>
+            </div>
+            <div className="flex justify-between text-ash">
+              <span>Shipping</span>
+              <span className="text-bone">{shipping === 0 ? "Free" : formatPrice(shipping)}</span>
+            </div>
+… 20 more lines
+
+Edit
+src/components/HouseOfHeathensLanding.tsx
++122
+−20
+×3
+src/components/HouseOfHeathensLanding.tsx
++122
+−20
+import { Newsletter } from "./Newsletter";
+import {
+  HOUSE_DISCOUNT_CODE,
+  HOUSE_DISCOUNT_THRESHOLD,
+  HOUSE_HIGH_VALUE_DISCOUNT_RATE,
+  HOUSE_REGULAR_DISCOUNT_RATE,
+} from "@/lib/orders";
+function setVerified(value: boolean) {
+  try {
+    if (value) {
+      window.localStorage.setItem(HOUSE_AGE_KEY, "true");
+    } else {
+      window.localStorage.removeItem(HOUSE_AGE_KEY);
+    }
+  } catch {
+… 114 more lines
+              <p className="mt-4 max-w-xl text-ash">
+                Join the existing conclave list for launch notices, private drops,
+                and the first key when House pieces are ready to leave the cellar.
+              </p>
+            </div>
+            <Newsletter />
+              <p className="mt-4 max-w-xl text-ash">
+                Join the House of Heretics list for launch notices, private drops,
+… 5 more lines
+
+Edit
+src/app/house-of-heathens-harlots-and-heretics/page.tsx
++2
+−2
+src/app/house-of-heathens-harlots-and-heretics/page.tsx
++2
+−2
+  description:
+    "The adults-only side room of Hermetic Apothecary: an 18+ verified landing page for after-dark drops, adult customs, and provocative occult art.",
+  description:
+    "The adults-only side room of Hermetic Apothecary with a House of Heretics signup for 5% off regular orders and 25% off orders of $101+.",
+
+Ran commands
+3
+
+Edit
+src/lib/orders.ts
++4
+−4
+×2
+src/lib/orders.ts
++4
+−4
+export const HOUSE_DISCOUNT_ALIASES = [HOUSE_DISCOUNT_CODE, "HOUSEOFHERETICS", "HOUSE-OF-HERETICS"];
+export const HOUSE_DISCOUNT_ALIASES = [HOUSE_DISCOUNT_CODE, "HOUSEOFHERETICS"];
+export function normalizeDiscountCode(code: string) {
+  return code.trim().toUpperCase();
+}
+export function normalizeDiscountCode(code: string) {
+  return code.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
+}
+
+Ran commands
+2
+command
+
+$ git status --short --branch && git diff --stat && git diff -- src/lib/orders.ts src/app/api/orders/route.ts src/app/checkout/page.tsx src/components/HouseOfHeathensLanding.tsx src/app/house-of-heathens-harlots-and-heretics/page.tsx | sed -n '1,240p'
+stdout
+
+## arena/019f76ef-hermeticapothecary
+ M package.json
+ M src/app/api/orders/route.ts
+ M src/app/checkout/page.tsx
+ M src/components/Footer.tsx
+ M src/components/Header.tsx
+ M src/lib/orders.ts
+?? src/app/house-of-heathens-harlots-and-heretics/
+?? src/app/house-of-heathens/
+?? src/components/HouseOfHeathensLanding.tsx
+ package.json                |  2 +-
+ src/app/api/orders/route.ts | 13 +++++++--
+ src/app/checkout/page.tsx   | 68 +++++++++++++++++++++++++++++++++++++++++----
+ src/components/Footer.tsx   |  1 +
+ src/components/Header.tsx   |  2 ++
+ src/lib/orders.ts           | 53 +++++++++++++++++++++++++++++++++--
+ 6 files changed, 127 insertions(+), 12 deletions(-)
+diff --git a/src/app/api/orders/route.ts b/src/app/api/orders/route.ts
+index 7264be6..09d7504 100644
+--- a/src/app/api/orders/route.ts
++++ b/src/app/api/orders/route.ts
+@@ -1,7 +1,7 @@
+ import { db } from "@/db";
+ import { orders, orderItems, products } from "@/db/schema";
+ import { PRODUCTS } from "@/lib/seed-data";
+-import { calculateOrderTotal, roundCurrency } from "@/lib/orders";
++import { calculateOrderTotal, getDiscountForCode, roundCurrency } from "@/lib/orders";
+ import { inArray } from "drizzle-orm";
+ 
+ export const dynamic = "force-dynamic";
+@@ -21,6 +21,7 @@ export async function POST(req: Request) {
+     const body = await req.json();
+     const items = Array.isArray(body.items) ? body.items : [];
+     const customer = body.customer ?? {};
++    const discountCode = String(body.discountCode ?? "").trim();
+ 
+     const name = String(customer.name ?? "").trim();
+     const email = String(customer.email ?? "").trim();
+@@ -81,8 +82,14 @@ export async function POST(req: Request) {
+ 
+     const finalizedItems = validated.filter((it): it is FinalizedItem => it !== null);
+ 
+-    const subtotal = finalizedItems.reduce((sum, it) => sum + it.price * it.quantity, 0);
+-    const total = calculateOrderTotal(roundCurrency(subtotal));
++    const subtotal = roundCurrency(finalizedItems.reduce((sum, it) => sum + it.price * it.quantity, 0));
++    const appliedDiscount = discountCode ? getDiscountForCode(discountCode, subtotal) : null;
++
++    if (discountCode && !appliedDiscount) {
++      return Response.json({ error: "Invalid discount code" }, { status: 400 });
++    }
++
++    const total = calculateOrderTotal(subtotal, appliedDiscount?.amount ?? 0);
+     const accessToken = crypto.randomUUID();
+ 
+     const [order] = await db
+diff --git a/src/app/checkout/page.tsx b/src/app/checkout/page.tsx
+index c2434c4..b904c9d 100644
+--- a/src/app/checkout/page.tsx
++++ b/src/app/checkout/page.tsx
+@@ -6,7 +6,14 @@ import { useState } from "react";
+ import { useCart } from "@/components/CartProvider";
+ import { ProductArt } from "@/components/ProductArt";
+ import { formatPrice } from "@/lib/format";
+-import { calculateShipping, calculateOrderTotal } from "@/lib/orders";
++import {
++  HOUSE_DISCOUNT_CODE,
++  HOUSE_DISCOUNT_THRESHOLD,
++  calculateDiscountedSubtotal,
++  calculateOrderTotal,
++  calculateShipping,
++  getDiscountForCode,
++} from "@/lib/orders";
+ 
+ const COUNTRIES = ["United States", "Canada", "United Kingdom", "Australia", "Germany", "Other"];
+ 
+@@ -15,6 +22,7 @@ export default function CheckoutPage() {
+   const router = useRouter();
+   const [busy, setBusy] = useState(false);
+   const [error, setError] = useState<string | null>(null);
++  const [discountCode, setDiscountCode] = useState("");
+   const [form, setForm] = useState({
+     name: "",
+     email: "",
+@@ -26,8 +34,12 @@ export default function CheckoutPage() {
+     note: "",
+   });
+ 
+-  const shipping = calculateShipping(total);
+-  const grand = calculateOrderTotal(total);
++  const appliedDiscount = discountCode.trim() ? getDiscountForCode(discountCode, total) : null;
++  const discount = appliedDiscount?.amount ?? 0;
++  const discountedSubtotal = calculateDiscountedSubtotal(total, discount);
++  const shipping = calculateShipping(discountedSubtotal);
++  const grand = calculateOrderTotal(total, discount);
++  const hasInvalidDiscount = Boolean(discountCode.trim() && !appliedDiscount);
+ 
+   function set<K extends keyof typeof form>(key: K, value: string) {
+     setForm((f) => ({ ...f, [key]: value }));
+@@ -47,6 +59,10 @@ export default function CheckoutPage() {
+       setError("Your cart is empty.");
+       return;
+     }
++    if (hasInvalidDiscount) {
++      setError("Please enter a valid discount code or clear the discount field.");
++      return;
++    }
+     setBusy(true);
+     try {
+       const res = await fetch("/api/orders", {
+@@ -60,14 +76,18 @@ export default function CheckoutPage() {
+             quantity: i.qty,
+           })),
+           customer: form,
++          discountCode: appliedDiscount?.code,
+         }),
+       });
+-      if (!res.ok) throw new Error("order failed");
++      if (!res.ok) {
++        const data = (await res.json().catch(() => null)) as { error?: string } | null;
++        throw new Error(data?.error ?? "order failed");
++      }
+       const data = (await res.json()) as { id: number; total: number; accessToken: string };
+       clear();
+       router.push(`/checkout/success?order=${data.id}&token=${encodeURIComponent(data.accessToken)}`);
+-    } catch {
+-      setError("The ritual was interrupted. Please try again.");
++    } catch (err) {
++      setError(err instanceof Error ? err.message : "The ritual was interrupted. Please try again.");
+       setBusy(false);
+     }
+   }
+@@ -149,11 +169,47 @@ export default function CheckoutPage() {
+               </li>
+             ))}
+           </ul>
++          <div className="mt-5 rounded-xl border border-line bg-ink/50 p-4">
++            <label className="label">House discount code</label>
++            <input
++              className="input text-sm"
++              value={discountCode}
++              onChange={(e) => setDiscountCode(e.target.value)}
++              placeholder={HOUSE_DISCOUNT_CODE}
++              aria-describedby="house-discount-help"
++            />
++            <p id="house-discount-help" className="mt-2 text-xs leading-relaxed text-ash/80">
++              Join the {" "}
++              <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold hover:underline">
++                House of Heretics
++              </Link>{" "}
++              list for 5% off regular orders, or 25% off orders of {formatPrice(HOUSE_DISCOUNT_THRESHOLD)}+.
++            </p>
++            {appliedDiscount ? (
++              <p className="mt-2 text-sm text-gold">
++                {appliedDiscount.label} applied: -{formatPrice(discount)}
++              </p>
++            ) : hasInvalidDiscount ? (
++              <p className="mt-2 text-sm text-blood">That house key is not recognized.</p>
++            ) : null}
++          </div>
+           <div className="mt-5 space-y-2 border-t border-line pt-4 text-sm">
+             <div className="flex justify-between text-ash">
+               <span>Subtotal</span>
+               <span className="text-bone">{formatPrice(total)}</span>
+             </div>
++            {appliedDiscount ? (
++              <>
++                <div className="flex justify-between text-gold">
++                  <span>House discount</span>
++                  <span>-{formatPrice(discount)}</span>
++                </div>
++                <div className="flex justify-between text-ash">
++                  <span>Discounted subtotal</span>
++                  <span className="text-bone">{formatPrice(discountedSubtotal)}</span>
++                </div>
++              </>
++            ) : null}
+             <div className="flex justify-between text-ash">
+               <span>Shipping</span>
+               <span className="text-bone">{shipping === 0 ? "Free" : formatPrice(shipping)}</span>
+diff --git a/src/lib/orders.ts b/src/lib/orders.ts
+index 9079997..a8c8e90 100644
+--- a/src/lib/orders.ts
++++ b/src/lib/orders.ts
+@@ -1,15 +1,64 @@
+ export const FREE_SHIPPING_THRESHOLD = 75;
+ export const FLAT_SHIPPING_RATE = 8;
+ 
++export const HOUSE_DISCOUNT_CODE = "HERETIC";
++export const HOUSE_DISCOUNT_ALIASES = [HOUSE_DISCOUNT_CODE, "HOUSEOFHERETICS"];
++export const HOUSE_DISCOUNT_THRESHOLD = 101;
++export const HOUSE_REGULAR_DISCOUNT_RATE = 0.05;
++export const HOUSE_HIGH_VALUE_DISCOUNT_RATE = 0.25;
++
++export interface AppliedDiscount {
++  code: string;
++  label: string;
++  rate: number;
++  amount: number;
++}
++
+ export function roundCurrency(amount: number) {
+   return Math.round(amount * 100) / 100;
+ }
+ 
++export function normalizeDiscountCode(code: string) {
++  return code.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
++}
++
++export function getHouseDiscountRate(subtotal: number) {
++  return subtotal >= HOUSE_DISCOUNT_THRESHOLD
++    ? HOUSE_HIGH_VALUE_DISCOUNT_RATE
++    : HOUSE_REGULAR_DISCOUNT_RATE;
++}
++
++export function calculateHouseDiscount(subtotal: number) {
++  if (subtotal <= 0) return 0;
++  return roundCurrency(subtotal * getHouseDiscountRate(subtotal));
++}
++
++export function getDiscountForCode(code: string, subtotal: number): AppliedDiscount | null {
++  const normalizedCode = normalizeDiscountCode(code);
++  if (!normalizedCode || !HOUSE_DISCOUNT_ALIASES.includes(normalizedCode)) return null;
++
++  const rate = getHouseDiscountRate(subtotal);
++  return {
++    code: HOUSE_DISCOUNT_CODE,
++    label:
++      rate === HOUSE_HIGH_VALUE_DISCOUNT_RATE
++        ? `House discount ${Math.round(rate * 100)}% off $${HOUSE_DISCOUNT_THRESHOLD}+`
++        : `House discount ${Math.round(rate * 100)}% off`,
++    rate,
++    amount: calculateHouseDiscount(subtotal),
++  };
++}
++
++export function calculateDiscountedSubtotal(subtotal: number, discount = 0) {
++  return roundCurrency(Math.max(0, subtotal - discount));
++}
++
+ export function calculateShipping(subtotal: number) {
+   if (subtotal === 0 || subtotal > FREE_SHIPPING_THRESHOLD) return 0;
+   return FLAT_SHIPPING_RATE;
+ }
+ 
+-export function calculateOrderTotal(subtotal: number) {
+-  return roundCurrency(subtotal + calculateShipping(subtotal));
++export function calculateOrderTotal(subtotal: number, discount = 0) {
++  const discountedSubtotal = calculateDiscountedSubtotal(subtotal, discount);
++  return roundCurrency(discountedSubtotal + calculateShipping(discountedSubtotal));
+ }
+command
+
+$ git log --oneline --decorate -5 && git status --short --branch
+stdout
+
+890ee08 (grafted, HEAD -> arena/019f76ef-hermeticapothecary) Merge pull request #4 from CharlyOlson/dependabot/npm_and_yarn/npm_and_yarn-f433e91868
+## arena/019f76ef-hermeticapothecary
+ M package.json
+ M src/app/api/orders/route.ts
+ M src/app/checkout/page.tsx
+ M src/components/Footer.tsx
+ M src/components/Header.tsx
+ M src/lib/orders.ts
+?? src/app/house-of-heathens-harlots-and-heretics/
+?? src/app/house-of-heathens/
+?? src/components/HouseOfHeathensLanding.tsx
+
+Explored
+1 read
+Read
+format.ts
+
+Ran commands
+2
+command
+
+$ git add package.json src/app/api/orders/route.ts src/app/checkout/page.tsx src/components/Footer.tsx src/components/Header.tsx src/lib/orders.ts src/app/house-of-heathens-harlots-and-heretics/page.tsx src/app/house-of-heathens/page.tsx src/components/HouseOfHeathensLanding.tsx && git diff --cached --stat && git commit -m "Add House of Heretics signup discount"
+stdout
+
+ package.json                                       |   2 +-
+ src/app/api/orders/route.ts                        |  13 +-
+ src/app/checkout/page.tsx                          |  68 +++-
+ .../page.tsx                                       |  12 +
+ src/app/house-of-heathens/page.tsx                 |   5 +
+ src/components/Footer.tsx                          |   1 +
+ src/components/Header.tsx                          |   2 +
+ src/components/HouseOfHeathensLanding.tsx          | 345 +++++++++++++++++++++
+ src/lib/orders.ts                                  |  53 +++-
+ 9 files changed, 489 insertions(+), 12 deletions(-)
+[arena/019f76ef-hermeticapothecary f747d25] Add House of Heretics signup discount
+ 9 files changed, 489 insertions(+), 12 deletions(-)
+ create mode 100644 src/app/house-of-heathens-harlots-and-heretics/page.tsx
+ create mode 100644 src/app/house-of-heathens/page.tsx
+ create mode 100644 src/components/HouseOfHeathensLanding.tsx
+command
+
+$ git status --short --branch && git log --oneline --decorate -3
+stdout
+
+## arena/019f76ef-hermeticapothecary
+f747d25 (HEAD -> arena/019f76ef-hermeticapothecary) Add House of Heretics signup discount
+890ee08 (grafted) Merge pull request #4 from CharlyOlson/dependabot/npm_and_yarn/npm_and_yarn-f433e91868
+Done locally and committed.
+
+Added:
+
+House of Heretics signup on the 18+ page.
+Signup success shows discount code: HERETIC
+Checkout now has a House discount code field.
+Code applies:
+5% off regular orders
+25% off orders of $101+
+Server-side order API validates and calculates the discount too, so it isn’t just visual.
+Commit created locally:
+
+f747d25 Add House of Heretics signup discount
+
+Note: I did not push to GitHub from this turn because this Arena coding session is marked finished for remote GitHub actions. To update the PR/GitHub, start a new coding session from the repo picker and these changes can be pushed from there.
+
+
+ok please pull a request and double check i t
+
+
+
+Ran commands
+2
+command
+
+$ git status --short --branch && git show --stat --oneline --decorate --no-renames HEAD && sed -n '1,420p' src/components/HouseOfHeathensLanding.tsx && echo '--- checkout' && sed -n '1,260p' src/app/checkout/page.tsx && echo '--- orders lib' && sed -n '1,220p' src/lib/orders.ts && echo '--- api orders' && sed -n '1,180p' src/app/api/orders/route.ts
+stdout(middle omitted)
+
+## arena/019f76ef-hermeticapothecary
+f747d25 (HEAD -> arena/019f76ef-hermeticapothecary) Add House of Heretics signup discount
+ package.json                                       |   2 +-
+ src/app/api/orders/route.ts                        |  13 +-
+ src/app/checkout/page.tsx                          |  68 +++-
+ .../page.tsx                                       |  12 +
+ src/app/house-of-heathens/page.tsx                 |   5 +
+ src/components/Footer.tsx                          |   1 +
+ src/components/Header.tsx                          |   2 +
+ src/components/HouseOfHeathensLanding.tsx          | 345 +++++++++++++++++++++
+ src/lib/orders.ts                                  |  53 +++-
+ 9 files changed, 489 insertions(+), 12 deletions(-)
+"use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import {
+  HOUSE_DISCOUNT_CODE,
+  HOUSE_DISCOUNT_THRESHOLD,
+  HOUSE_HIGH_VALUE_DISCOUNT_RATE,
+  HOUSE_REGULAR_DISCOUNT_RATE,
+} from "@/lib/orders";
+
+const HOUSE_AGE_KEY = "hermetic-house-of-heathens-age-verified";
+
+type GateState = "checking" | "locked" | "verified";
+
+const houseRules = [
+  "Adults only: you confirm you are 18 years of age or older.",
+  "After-dark language, provocative themes, and unruly devotional art may appear beyond this threshold.",
+  "No shame, no minors, no borrowed cages — consent and self-possession are the house law.",
+];
+
+const offerings = [
+  {
+    title: "After-dark drops",
+    body: "Limited runs with the same Hermetic Apothecary handwork, sharpened for the grown and ungovernable.",
+  },
+  {
+    title: "Unholy apparel",
+    body: "Tees, relics, and ritual objects with adult humor, body-positive mischief, and blasphemous bite.",
+  },
+  {
+    title: "Private commissions",
+    body: "Custom confessions and personal symbols translated into art for people old enough to own the story.",
+  },
+];
+
+function setVerified(value: boolean) {
+  try {
+    if (value) {
+      window.localStorage.setItem(HOUSE_AGE_KEY, "true");
+    } else {
+      window.localStorage.removeItem(HOUSE_AGE_KEY);
+    }
+  } catch {
+    // Some browsers block storage. The in-memory gate state still updates.
+  }
+}
+
+function HouseSignup() {
+  const [email, setEmail] = useState("");
+  const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [error, setError] = useState("");
+  const regularDiscountPercent = Math.round(HOUSE_REGULAR_DISCOUNT_RATE * 100);
+  const highValueDiscountPercent = Math.round(HOUSE_HIGH_VALUE_DISCOUNT_RATE * 100);
+
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    if (submitting) return;
+
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim(), source: "house-of-heretics" }),
+      });
+      if (!res.ok) throw new Error("Subscribe failed");
+      setSent(true);
+      setEmail("");
+    } catch {
+      setError("The house door stuck. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  async function copyCode() {
+    try {
+      await navigator.clipboard.writeText(HOUSE_DISCOUNT_CODE);
+      setCopied(true);
+    } catch {
+      setCopied(false);
+    }
+  }
+
+  if (sent) {
+    return (
+      <div className="rounded-2xl border border-gold/30 bg-void/40 p-5">
+        <p className="font-title text-[11px] uppercase tracking-[0.24em] text-gold">You are on the House list</p>
+        <p className="mt-3 text-sm leading-relaxed text-ash">
+          Use this house key at checkout for {regularDiscountPercent}% off regular orders, or {highValueDiscountPercent}% off orders of ${HOUSE_DISCOUNT_THRESHOLD}+.
+        </p>
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+          <code className="flex-1 rounded-xl border border-line bg-ink px-4 py-3 text-center font-title text-sm uppercase tracking-[0.22em] text-gold">
+            {HOUSE_DISCOUNT_CODE}
+          </code>
+          <button type="button" onClick={copyCode} className="btn-outline-light px-5">
+            {copied ? "Copied" : "Copy code"}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="rounded-2xl border border-gold/30 bg-void/40 p-5">
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div className="rounded-xl border border-line bg-ink/60 p-4">
+          <p className="font-display text-4xl text-gold">{regularDiscountPercent}%</p>
+          <p className="mt-1 text-xs uppercase tracking-[0.18em] text-ash">off regular orders</p>
+        </div>
+        <div className="rounded-xl border border-line bg-ink/60 p-4">
+          <p className="font-display text-4xl text-gold">{highValueDiscountPercent}%</p>
+          <p className="mt-1 text-xs uppercase tracking-[0.18em] text-ash">off ${HOUSE_DISCOUNT_THRESHOLD}+ orders</p>
+        </div>
+      </div>
+      <form onSubmit={submit} className="mt-5 space-y-3">
+        <label className="label">House of Heretics sign up</label>
+        <div className="flex flex-col gap-2 sm:flex-row">
+          <input
+            type="email"
+            aria-label="Email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="your@email.com"
+            className="input flex-1 text-sm"
+            required
+          />
+          <button type="submit" className="btn-gold px-4 text-sm" disabled={submitting}>
+            {submitting ? "Opening..." : "Get the code"}
+          </button>
+        </div>
+        <p className="text-xs leading-relaxed text-ash/80">
+          Sign up to receive the checkout code {HOUSE_DISCOUNT_CODE}: {regularDiscountPercent}% off regular orders and {highValueDiscountPercent}% off orders of ${HOUSE_DISCOUNT_THRESHOLD}+.
+        </p>
+        {error ? <p className="text-sm text-blood">{error}</p> : null}
+      </form>
+    </div>
+  );
+}
+
+export function HouseOfHeathensLanding() {
+  const [gateState, setGateState] = useState<GateState>("checking");
+
+  useEffect(() => {
+    try {
+      setGateState(window.localStorage.getItem(HOUSE_AGE_KEY) === "true" ? "verified" : "locked");
+    } catch {
+      setGateState("locked");
+    }
+  }, []);
+
+  function enterHouse() {
+    setVerified(true);
+    setGateState("verified");
+  }
+
+  function lockHouse() {
+    setVerified(false);
+    setGateState("locked");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  if (gateState === "checking") {
+    return (
+      <section className="relative grid min-h-[calc(100vh-4rem)] place-items-center overflow-hidden px-5 py-24 grain">
+        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold/20 bg-gold/10 blur-3xl" />
+        <div className="relative text-center">
+          <p className="eyebrow">Checking the threshold</p>
+          <h1 className="mt-4 font-display text-5xl text-bone sm:text-6xl">18+ verification</h1>
+          <p className="mt-4 text-sm uppercase tracking-[0.24em] text-ash">House key loading...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (gateState === "locked") {
+    return (
+      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden px-5 py-16 grain sm:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(140,47,57,0.26),transparent_38%),radial-gradient(circle_at_10%_80%,rgba(201,162,75,0.16),transparent_32%),linear-gradient(180deg,rgba(10,9,12,0.2),#0a090c)]" />
+        <div className="absolute left-1/2 top-16 h-64 w-64 -translate-x-1/2 rounded-full border border-gold/20 bg-wine/30 blur-3xl" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <p className="eyebrow">Hermetic Apothecary presents · Adults only</p>
+            <h1 className="mt-5 text-balance font-display text-5xl leading-[0.95] text-bone text-shadow-ritual sm:text-7xl lg:text-8xl">
+              House of Heathens, Harlots and Heretics
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ash">
+              Same altar, later hour. This is the 18+ side room for the beautiful,
+              the banished, and the fully grown — a sister brand for adult
+              themes, darker jokes, and unapologetic self-possession.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <span className="chip border-gold/40 text-gold-soft">18+ verification</span>
+              <span className="chip border-blood/50 text-bone">After dark</span>
+              <span className="chip border-violet/50 text-ash">Same brand bloodline</span>
+            </div>
+          </div>
+
+          <div className="relative rounded-[2rem] border border-gold/30 bg-surface/80 p-6 shadow-2xl backdrop-blur md:p-8">
+            <div className="absolute -right-4 -top-4 hidden rounded-full border border-gold/40 bg-void px-4 py-2 font-title text-[11px] uppercase tracking-[0.22em] text-gold md:block">
+              Age Gate
+            </div>
+            <div className="rounded-[1.5rem] border border-line bg-ink/70 p-6">
+              <p className="font-occult text-4xl text-gold">Enter if invited</p>
+              <h2 className="mt-4 font-display text-3xl text-bone">Confirm the house rules</h2>
+              <ul className="mt-6 space-y-4 text-sm leading-relaxed text-ash">
+                {houseRules.map((rule) => (
+                  <li key={rule} className="flex gap-3">
+                    <span className="mt-1 text-gold">✦</span>
+                    <span>{rule}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <button type="button" onClick={enterHouse} className="btn-gold">
+                  I am 18+ · Enter
+                </button>
+                <Link
+middle output omitted
+iquary</h2>
+          <ul className="mt-4 space-y-3">
+            {items.map((i) => (
+              <li key={i.id} className="flex items-center gap-3">
+                <div className="relative h-14 w-12 shrink-0 overflow-hidden rounded-md border border-line">
+                  <ProductArt seed={i.artSeed} category={i.category as never} className="h-full w-full object-cover" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm text-bone">{i.name}</p>
+                  <p className="text-xs text-ash">Qty {i.qty}</p>
+                </div>
+                <span className="text-sm text-gold">{formatPrice(i.price * i.qty)}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-5 rounded-xl border border-line bg-ink/50 p-4">
+            <label className="label">House discount code</label>
+            <input
+              className="input text-sm"
+              value={discountCode}
+              onChange={(e) => setDiscountCode(e.target.value)}
+              placeholder={HOUSE_DISCOUNT_CODE}
+              aria-describedby="house-discount-help"
+            />
+            <p id="house-discount-help" className="mt-2 text-xs leading-relaxed text-ash/80">
+              Join the {" "}
+              <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold hover:underline">
+                House of Heretics
+              </Link>{" "}
+              list for 5% off regular orders, or 25% off orders of {formatPrice(HOUSE_DISCOUNT_THRESHOLD)}+.
+            </p>
+            {appliedDiscount ? (
+              <p className="mt-2 text-sm text-gold">
+                {appliedDiscount.label} applied: -{formatPrice(discount)}
+              </p>
+            ) : hasInvalidDiscount ? (
+              <p className="mt-2 text-sm text-blood">That house key is not recognized.</p>
+            ) : null}
+          </div>
+          <div className="mt-5 space-y-2 border-t border-line pt-4 text-sm">
+            <div className="flex justify-between text-ash">
+              <span>Subtotal</span>
+              <span className="text-bone">{formatPrice(total)}</span>
+            </div>
+            {appliedDiscount ? (
+              <>
+                <div className="flex justify-between text-gold">
+                  <span>House discount</span>
+                  <span>-{formatPrice(discount)}</span>
+                </div>
+                <div className="flex justify-between text-ash">
+                  <span>Discounted subtotal</span>
+                  <span className="text-bone">{formatPrice(discountedSubtotal)}</span>
+                </div>
+              </>
+            ) : null}
+            <div className="flex justify-between text-ash">
+              <span>Shipping</span>
+              <span className="text-bone">{shipping === 0 ? "Free" : formatPrice(shipping)}</span>
+            </div>
+            <div className="flex justify-between border-t border-line pt-3 font-display text-xl text-bone">
+              <span>Total</span>
+              <span className="text-gold">{formatPrice(grand)}</span>
+            </div>
+          </div>
+          {error && <p className="mt-4 text-sm text-blood">{error}</p>}
+          <button type="submit" disabled={busy} className="btn-gold mt-5 w-full">
+            {busy ? "Consecrating…" : "Place Order"}
+          </button>
+          <p className="mt-3 text-center text-[11px] uppercase tracking-[0.16em] text-ash/70">
+            Encrypted & blessed at checkout
+          </p>
+        </aside>
+      </form>
+    </div>
+  );
+}
+--- orders lib
+export const FREE_SHIPPING_THRESHOLD = 75;
+export const FLAT_SHIPPING_RATE = 8;
+
+export const HOUSE_DISCOUNT_CODE = "HERETIC";
+export const HOUSE_DISCOUNT_ALIASES = [HOUSE_DISCOUNT_CODE, "HOUSEOFHERETICS"];
+export const HOUSE_DISCOUNT_THRESHOLD = 101;
+export const HOUSE_REGULAR_DISCOUNT_RATE = 0.05;
+export const HOUSE_HIGH_VALUE_DISCOUNT_RATE = 0.25;
+
+export interface AppliedDiscount {
+  code: string;
+  label: string;
+  rate: number;
+  amount: number;
+}
+
+export function roundCurrency(amount: number) {
+  return Math.round(amount * 100) / 100;
+}
+
+export function normalizeDiscountCode(code: string) {
+  return code.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
+}
+
+export function getHouseDiscountRate(subtotal: number) {
+  return subtotal >= HOUSE_DISCOUNT_THRESHOLD
+    ? HOUSE_HIGH_VALUE_DISCOUNT_RATE
+    : HOUSE_REGULAR_DISCOUNT_RATE;
+}
+
+export function calculateHouseDiscount(subtotal: number) {
+  if (subtotal <= 0) return 0;
+  return roundCurrency(subtotal * getHouseDiscountRate(subtotal));
+}
+
+export function getDiscountForCode(code: string, subtotal: number): AppliedDiscount | null {
+  const normalizedCode = normalizeDiscountCode(code);
+  if (!normalizedCode || !HOUSE_DISCOUNT_ALIASES.includes(normalizedCode)) return null;
+
+  const rate = getHouseDiscountRate(subtotal);
+  return {
+    code: HOUSE_DISCOUNT_CODE,
+    label:
+      rate === HOUSE_HIGH_VALUE_DISCOUNT_RATE
+        ? `House discount ${Math.round(rate * 100)}% off $${HOUSE_DISCOUNT_THRESHOLD}+`
+        : `House discount ${Math.round(rate * 100)}% off`,
+    rate,
+    amount: calculateHouseDiscount(subtotal),
+  };
+}
+
+export function calculateDiscountedSubtotal(subtotal: number, discount = 0) {
+  return roundCurrency(Math.max(0, subtotal - discount));
+}
+
+export function calculateShipping(subtotal: number) {
+  if (subtotal === 0 || subtotal > FREE_SHIPPING_THRESHOLD) return 0;
+  return FLAT_SHIPPING_RATE;
+}
+
+export function calculateOrderTotal(subtotal: number, discount = 0) {
+  const discountedSubtotal = calculateDiscountedSubtotal(subtotal, discount);
+  return roundCurrency(discountedSubtotal + calculateShipping(discountedSubtotal));
+}
+--- api orders
+import { db } from "@/db";
+import { orders, orderItems, products } from "@/db/schema";
+import { PRODUCTS } from "@/lib/seed-data";
+import { calculateOrderTotal, getDiscountForCode, roundCurrency } from "@/lib/orders";
+import { inArray } from "drizzle-orm";
+
+export const dynamic = "force-dynamic";
+
+interface RequestedItem {
+  productId: number;
+  quantity: number;
+}
+
+interface FinalizedItem extends RequestedItem {
+  name: string;
+  price: number;
+}
+
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    const items = Array.isArray(body.items) ? body.items : [];
+    const customer = body.customer ?? {};
+    const discountCode = String(body.discountCode ?? "").trim();
+
+    const name = String(customer.name ?? "").trim();
+    const email = String(customer.email ?? "").trim();
+    const address = String(customer.address ?? "").trim();
+    const city = String(customer.city ?? "").trim();
+    const state = String(customer.state ?? "").trim();
+    const zip = String(customer.zip ?? "").trim();
+    const country = String(customer.country ?? "United States");
+
+    if (!name || !email || !address || !city || !state || !zip) {
+      return Response.json({ error: "Missing customer fields" }, { status: 400 });
+    }
+    if (items.length === 0) {
+      return Response.json({ error: "Cart is empty" }, { status: 400 });
+    }
+
+    const requestedItems: RequestedItem[] = items
+      .map((it: { productId?: number; quantity?: number }) => ({
+        productId: Number(it.productId),
+        quantity: Math.min(100, Math.max(1, Math.round(Number(it.quantity) || 1))),
+      }))
+      .filter((it: RequestedItem) => Number.isFinite(it.productId) && it.productId > 0);
+
+    if (requestedItems.length !== items.length) {
+      return Response.json({ error: "Invalid cart items" }, { status: 400 });
+    }
+
+    const productIds: number[] = [...new Set(requestedItems.map((it: RequestedItem) => it.productId))];
+    const catalogRows = await db
+      .select({ id: products.id, name: products.name, price: products.price })
+      .from(products)
+      .where(inArray(products.id, productIds));
+
+    const catalog = new Map<number, { name: string; price: number }>();
+    for (const row of catalogRows) {
+      catalog.set(row.id, { name: row.name, price: Number(row.price) });
+    }
+    for (const product of PRODUCTS) {
+      if (!catalog.has(product.id)) {
+        catalog.set(product.id, { name: product.name, price: product.price });
+      }
+    }
+
+    const validated = requestedItems.map((it: RequestedItem): FinalizedItem | null => {
+      const product = catalog.get(it.productId);
+      if (!product) return null;
+      return {
+        productId: it.productId,
+        name: product.name.slice(0, 160),
+        price: roundCurrency(product.price),
+        quantity: it.quantity,
+      };
+    });
+
+    if (validated.some((it) => it === null)) {
+      return Response.json({ error: "Unknown product in cart" }, { status: 400 });
+    }
+
+    const finalizedItems = validated.filter((it): it is FinalizedItem => it !== null);
+
+    const subtotal = roundCurrency(finalizedItems.reduce((sum, it) => sum + it.price * it.quantity, 0));
+    const appliedDiscount = discountCode ? getDiscountForCode(discountCode, subtotal) : null;
+
+    if (discountCode && !appliedDiscount) {
+      return Response.json({ error: "Invalid discount code" }, { status: 400 });
+    }
+
+    const total = calculateOrderTotal(subtotal, appliedDiscount?.amount ?? 0);
+    const accessToken = crypto.randomUUID();
+
+    const [order] = await db
+      .insert(orders)
+      .values({
+        email,
+        name,
+        address,
+        city,
+        state,
+        zip,
+        country,
+        accessToken,
+        total: total.toFixed(2),
+        status: "pending",
+      })
+      .returning();
+
+    await db.insert(orderItems).values(
+      finalizedItems.map((it) => ({
+        orderId: order.id,
+        productId: it.productId,
+        name: it.name,
+        price: it.price.toFixed(2),
+        quantity: it.quantity,
+      })),
+    );
+
+    return Response.json({ id: order.id, total: Number(order.total), accessToken }, { status: 201 });
+  } catch {
+    return Response.json({ error: "Could not place order" }, { status: 500 });
+  }
+}
+command
+
+$ git grep -n "calculateOrderTotal\|calculateShipping\|getDiscountForCode\|HOUSE_DISCOUNT" src | cat && node - <<'EOF' const FREE_SHIPPING_THRESHOLD = 75; const FLAT_SHIPPING_RATE = 8; const HOUSE_DISCOUNT_THRESHOLD = 101; const roundCurrency = (amount) => Math.round(amount * 100) / 100; const rate = (subtotal) => subtotal >= HOUSE_DISCOUNT_THRESHOLD ? 0.25 : 0.05; const discount = (subtotal) => roundCurrency(subtotal * rate(subtotal)); const shipping = (subtotal) => subtotal === 0 || subtotal > FREE_SHIPPING_THRESHOLD ? 0 : FLAT_SHIPPING_RATE; const total = (subtotal) => { const d = discount(subtotal); const discountedSubtotal = roundCurrency(Math.max(0, subtotal - d)); return { subtotal, discount: d, discountedSubtotal, shipping: shipping(discountedSubtotal), total: roundCurrency(discountedSubtotal + shipping(discountedSubtotal)) }; }; for (const subtotal of [50, 100, 101, 200]) console.log(total(subtotal)); EOF
+stdout
+
+src/app/api/orders/route.ts:4:import { calculateOrderTotal, getDiscountForCode, roundCurrency } from "@/lib/orders";
+src/app/api/orders/route.ts:86:    const appliedDiscount = discountCode ? getDiscountForCode(discountCode, subtotal) : null;
+src/app/api/orders/route.ts:92:    const total = calculateOrderTotal(subtotal, appliedDiscount?.amount ?? 0);
+src/app/checkout/page.tsx:10:  HOUSE_DISCOUNT_CODE,
+src/app/checkout/page.tsx:11:  HOUSE_DISCOUNT_THRESHOLD,
+src/app/checkout/page.tsx:13:  calculateOrderTotal,
+src/app/checkout/page.tsx:14:  calculateShipping,
+src/app/checkout/page.tsx:15:  getDiscountForCode,
+src/app/checkout/page.tsx:37:  const appliedDiscount = discountCode.trim() ? getDiscountForCode(discountCode, total) : null;
+src/app/checkout/page.tsx:40:  const shipping = calculateShipping(discountedSubtotal);
+src/app/checkout/page.tsx:41:  const grand = calculateOrderTotal(total, discount);
+src/app/checkout/page.tsx:178:              placeholder={HOUSE_DISCOUNT_CODE}
+src/app/checkout/page.tsx:186:              list for 5% off regular orders, or 25% off orders of {formatPrice(HOUSE_DISCOUNT_THRESHOLD)}+.
+src/components/HouseOfHeathensLanding.tsx:6:  HOUSE_DISCOUNT_CODE,
+src/components/HouseOfHeathensLanding.tsx:7:  HOUSE_DISCOUNT_THRESHOLD,
+src/components/HouseOfHeathensLanding.tsx:82:      await navigator.clipboard.writeText(HOUSE_DISCOUNT_CODE);
+src/components/HouseOfHeathensLanding.tsx:94:          Use this house key at checkout for {regularDiscountPercent}% off regular orders, or {highValueDiscountPercent}% off orders of ${HOUSE_DISCOUNT_THRESHOLD}+.
+src/components/HouseOfHeathensLanding.tsx:98:            {HOUSE_DISCOUNT_CODE}
+src/components/HouseOfHeathensLanding.tsx:117:          <p className="mt-1 text-xs uppercase tracking-[0.18em] text-ash">off ${HOUSE_DISCOUNT_THRESHOLD}+ orders</p>
+src/components/HouseOfHeathensLanding.tsx:137:          Sign up to receive the checkout code {HOUSE_DISCOUNT_CODE}: {regularDiscountPercent}% off regular orders and {highValueDiscountPercent}% off orders of ${HOUSE_DISCOUNT_THRESHOLD}+.
+src/lib/orders.ts:4:export const HOUSE_DISCOUNT_CODE = "HERETIC";
+src/lib/orders.ts:5:export const HOUSE_DISCOUNT_ALIASES = [HOUSE_DISCOUNT_CODE, "HOUSEOFHERETICS"];
+src/lib/orders.ts:6:export const HOUSE_DISCOUNT_THRESHOLD = 101;
+src/lib/orders.ts:26:  return subtotal >= HOUSE_DISCOUNT_THRESHOLD
+src/lib/orders.ts:36:export function getDiscountForCode(code: string, subtotal: number): AppliedDiscount | null {
+src/lib/orders.ts:38:  if (!normalizedCode || !HOUSE_DISCOUNT_ALIASES.includes(normalizedCode)) return null;
+src/lib/orders.ts:42:    code: HOUSE_DISCOUNT_CODE,
+src/lib/orders.ts:45:        ? `House discount ${Math.round(rate * 100)}% off $${HOUSE_DISCOUNT_THRESHOLD}+`
+src/lib/orders.ts:56:export function calculateShipping(subtotal: number) {
+src/lib/orders.ts:61:export function calculateOrderTotal(subtotal: number, discount = 0) {
+src/lib/orders.ts:63:  return roundCurrency(discountedSubtotal + calculateShipping(discountedSubtotal));
+{
+  subtotal: 50,
+  discount: 2.5,
+  discountedSubtotal: 47.5,
+  shipping: 8,
+  total: 55.5
+}
+{
+  subtotal: 100,
+  discount: 5,
+  discountedSubtotal: 95,
+  shipping: 0,
+  total: 95
+}
+{
+  subtotal: 101,
+  discount: 25.25,
+  discountedSubtotal: 75.75,
+  shipping: 0,
+  total: 75.75
+}
+{
+  subtotal: 200,
+  discount: 50,
+  discountedSubtotal: 150,
+  shipping: 0,
+  total: 150
+}
+I double-checked it locally, but I can’t open or update the GitHub pull request from this session because this Arena coding session is marked finished for remote GitHub actions. I’m not allowed to push or run gh pr from here now.
+
+What I did verify locally:
+
+Working tree is clean.
+Local commit exists:
+Bash
+
+f747d25 Add House of Heretics signup discount
+The House page now has a House of Heretics signup.
+Signup reveals the code:
+text
+
+HERETIC
+Checkout now has a discount code field.
+The order API validates the discount server-side too.
+Discount math checked:
+$50 order gets 5% off.
+$100 order gets 5% off.
+$101 order gets 25% off.
+$200 order gets 25% off.
+Important note: I still couldn’t run a full build because the sandbox doesn’t have dependencies installed, and package install previously failed from registry/TLS network errors.
+
+To get this into GitHub, start a new coding session from the repo picker, then the local changes can be pushed and a PR can be opened/updated from there.
+
+
+ok create a pull request
+
+
+I can’t create or update a GitHub pull request from this current Arena session because the session is marked finished/closed for remote GitHub actions. Pushing commits or opening PRs is blocked for this session.
+
+The work is already committed locally here:
+
+Bash
+
+f747d25 Add House of Heretics signup discount
+To get it into GitHub, please start a new coding session from the repo picker for this repository. Then I can push this work and open/update the pull request from that active session.
