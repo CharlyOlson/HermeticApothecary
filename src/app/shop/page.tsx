@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Shop",
   description:
-    "Browse art prints, resin relics, custom tees, ouija boards, jewelry, and novelty from Hermits Apothecary.",
+    "Browse art prints, resin relics, custom tees, ouija boards, jewelry, and novelty from Hermetic Apothecary.",
 };
 
 export default async function ShopPage({

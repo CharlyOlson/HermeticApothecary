@@ -5,8 +5,8 @@ import { Providers } from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: {
-    default: "Hermits Apothecary — Sacred Objects for the Beautifully Damned",
-    template: "%s · Hermits Apothecary",
+    default: "Hermetic Apothecary — Sacred Objects for the Beautifully Damned",
+    template: "%s · Hermetic Apothecary",
   },
   description:
     "Art prints, resin relics, custom tees, ouija boards, jewelry, and novelty for the modern mystic. Handmade, visually striking, deep in meaning.",
