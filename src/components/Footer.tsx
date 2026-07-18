@@ -26,6 +26,7 @@ export function Footer() {
             <li><Link href="/gallery" className="hover:text-bone">The Gallery</Link></li>
             <li><Link href="/shop" className="hover:text-bone">Shop</Link></li>
             <li><Link href="/submit" className="hover:text-bone">Submit Your Story</Link></li>
+            <li><Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft">18+ House</Link></li>
             <li><Link href="/#confession-wall" className="hover:text-bone">Confession Wall</Link></li>
           </ul>
         </div>

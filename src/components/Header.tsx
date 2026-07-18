@@ -21,6 +21,7 @@ export function Header() {
           <Link href="/gallery" className="hover:text-bone">Gallery</Link>
           <Link href="/shop" className="hover:text-bone">Shop</Link>
           <Link href="/submit" className="hover:text-bone">Submit</Link>
+          <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft">18+ House</Link>
         </nav>
         <div className="flex items-center gap-2">
           <button
@@ -52,6 +53,7 @@ export function Header() {
           <Link href="/gallery" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
           <Link href="/shop" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Shop</Link>
           <Link href="/submit" className="hover:text-bone" onClick={() => setIsMenuOpen(false)}>Submit</Link>
+          <Link href="/house-of-heathens-harlots-and-heretics" className="text-gold/90 hover:text-gold-soft" onClick={() => setIsMenuOpen(false)}>18+ House</Link>
         </div>
       </nav>
     </header>
