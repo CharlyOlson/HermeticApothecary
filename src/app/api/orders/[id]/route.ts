@@ -1,6 +1,6 @@
 import { db } from "@/db";
 import { orders, orderItems } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 
 export const dynamic = "force-dynamic";
 
@@ -10,9 +10,14 @@ export async function GET(
 ) {
   const { id } = await params;
   const orderId = Number(id);
+  const token = new URL(_req.url).searchParams.get("token")?.trim();
   if (!orderId) return Response.json({ error: "Invalid order" }, { status: 400 });
+  if (!token) return Response.json({ error: "Not found" }, { status: 404 });
 
-  const [order] = await db.select().from(orders).where(eq(orders.id, orderId));
+  const [order] = await db
+    .select()
+    .from(orders)
+    .where(and(eq(orders.id, orderId), eq(orders.accessToken, token)));
   if (!order) return Response.json({ error: "Not found" }, { status: 404 });
 
   const items = await db

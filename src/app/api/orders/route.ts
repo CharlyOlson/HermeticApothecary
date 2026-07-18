@@ -1,5 +1,8 @@
 import { db } from "@/db";
-import { orders, orderItems } from "@/db/schema";
+import { orders, orderItems, products } from "@/db/schema";
+import { PRODUCTS } from "@/lib/seed-data";
+import { calculateOrderTotal, roundCurrency } from "@/lib/orders";
+import { inArray } from "drizzle-orm";
 
 export const dynamic = "force-dynamic";
 
@@ -24,16 +27,53 @@ export async function POST(req: Request) {
       return Response.json({ error: "Cart is empty" }, { status: 400 });
     }
 
-    const validated = items
-      .map((it: { productId?: number; name?: string; price?: number; quantity?: number }) => ({
-        productId: it.productId ? Number(it.productId) : null,
-        name: String(it.name ?? "Untitled Relic").slice(0, 160),
-        price: Math.max(0, Number(it.price) || 0),
+    const requestedItems = items
+      .map((it: { productId?: number; quantity?: number }) => ({
+        productId: Number(it.productId),
         quantity: Math.max(1, Math.round(Number(it.quantity) || 1)),
       }))
-      .filter((it: { price: number }) => it.price >= 0);
+      .filter((it: { productId: number }) => Number.isFinite(it.productId) && it.productId > 0);
 
-    const total = validated.reduce((s: number, it: { price: number; quantity: number }) => s + it.price * it.quantity, 0);
+    if (requestedItems.length !== items.length) {
+      return Response.json({ error: "Invalid cart items" }, { status: 400 });
+    }
+
+    const productIds = [...new Set(requestedItems.map((it: { productId: number }) => it.productId))];
+    const catalogRows = await db
+      .select({ id: products.id, name: products.name, price: products.price })
+      .from(products)
+      .where(inArray(products.id, productIds));
+
+    const catalog = new Map<number, { name: string; price: number }>();
+    for (const row of catalogRows) {
+      catalog.set(row.id, { name: row.name, price: Number(row.price) });
+    }
+    for (const product of PRODUCTS) {
+      if (!catalog.has(product.id)) {
+        catalog.set(product.id, { name: product.name, price: product.price });
+      }
+    }
+
+    const validated = requestedItems.map((it: { productId: number; quantity: number }) => {
+      const product = catalog.get(it.productId);
+      if (!product) return null;
+      return {
+        productId: it.productId,
+        name: product.name.slice(0, 160),
+        price: roundCurrency(product.price),
+        quantity: it.quantity,
+      };
+    });
+
+    if (validated.some((it) => it === null)) {
+      return Response.json({ error: "Unknown product in cart" }, { status: 400 });
+    }
+
+    const finalizedItems = validated.filter((it): it is NonNullable<typeof it> => it !== null);
+
+    const subtotal = finalizedItems.reduce((sum, it) => sum + it.price * it.quantity, 0);
+    const total = calculateOrderTotal(roundCurrency(subtotal));
+    const accessToken = crypto.randomUUID();
 
     const [order] = await db
       .insert(orders)
@@ -45,13 +85,14 @@ export async function POST(req: Request) {
         state,
         zip,
         country,
+        accessToken,
         total: total.toFixed(2),
-        status: "paid",
+        status: "pending",
       })
       .returning();
 
     await db.insert(orderItems).values(
-      validated.map((it: { productId: number | null; name: string; price: number; quantity: number }) => ({
+      finalizedItems.map((it) => ({
         orderId: order.id,
         productId: it.productId,
         name: it.name,
@@ -60,7 +101,7 @@ export async function POST(req: Request) {
       })),
     );
 
-    return Response.json({ id: order.id, total: Number(order.total) }, { status: 201 });
+    return Response.json({ id: order.id, total: Number(order.total), accessToken }, { status: 201 });
   } catch {
     return Response.json({ error: "Could not place order" }, { status: 500 });
   }

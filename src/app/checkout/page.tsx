@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useCart } from "@/components/CartProvider";
 import { ProductArt } from "@/components/ProductArt";
 import { formatPrice } from "@/lib/format";
+import { calculateShipping, calculateOrderTotal } from "@/lib/orders";
 
 const COUNTRIES = ["United States", "Canada", "United Kingdom", "Australia", "Germany", "Other"];
 
@@ -25,8 +26,8 @@ export default function CheckoutPage() {
     note: "",
   });
 
-  const shipping = total > 75 || total === 0 ? 0 : 8;
-  const grand = total + shipping;
+  const shipping = calculateShipping(total);
+  const grand = calculateOrderTotal(total);
 
   function set<K extends keyof typeof form>(key: K, value: string) {
     setForm((f) => ({ ...f, [key]: value }));
@@ -62,9 +63,9 @@ export default function CheckoutPage() {
         }),
       });
       if (!res.ok) throw new Error("order failed");
-      const data = (await res.json()) as { id: number; total: number };
+      const data = (await res.json()) as { id: number; total: number; accessToken: string };
       clear();
-      router.push(`/checkout/success?order=${data.id}`);
+      router.push(`/checkout/success?order=${data.id}&token=${encodeURIComponent(data.accessToken)}`);
     } catch {
       setError("The ritual was interrupted. Please try again.");
       setBusy(false);

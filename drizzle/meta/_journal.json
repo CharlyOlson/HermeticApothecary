@@ -15,6 +15,13 @@
       "when": 1784345890126,
       "tag": "0001_neat_christian_walker",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1784346893435,
+      "tag": "0002_cuddly_ultron",
+      "breakpoints": true
     }
   ]
 }

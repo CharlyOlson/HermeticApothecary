@@ -21,12 +21,13 @@ export default function SuccessPage() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("order");
+    const token = params.get("token");
     setOrderId(id);
-    if (!id) {
+    if (!id || !token) {
       setLoading(false);
       return;
     }
-    fetch(`/api/orders/${id}`)
+    fetch(`/api/orders/${id}?token=${encodeURIComponent(token)}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => setOrder(d))
       .catch(() => setOrder(null))

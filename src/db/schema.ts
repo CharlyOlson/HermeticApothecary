@@ -37,8 +37,9 @@ export const orders = pgTable("orders", {
   state: text("state").notNull(),
   zip: text("zip").notNull(),
   country: text("country").notNull().default("United States"),
+  accessToken: text("access_token").notNull().unique(),
   total: decimal("total", { precision: 10, scale: 2 }).notNull(),
-  status: text("status").notNull().default("paid"),
+  status: text("status").notNull().default("pending"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 

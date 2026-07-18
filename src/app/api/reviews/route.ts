@@ -1,6 +1,6 @@
 import { db } from "@/db";
-import { reviews } from "@/db/schema";
-import { desc, eq } from "drizzle-orm";
+import { products, reviews } from "@/db/schema";
+import { desc, eq, sql } from "drizzle-orm";
 
 export const dynamic = "force-dynamic";
 
@@ -21,6 +21,22 @@ export async function POST(req: Request) {
       .insert(reviews)
       .values({ productId, author, rating, title, body: reviewBody, verified: false })
       .returning();
+
+    const [aggregate] = await db
+      .select({
+        reviewCount: sql<number>`count(*)::int`,
+        rating: sql<string>`coalesce(round(avg(${reviews.rating})::numeric, 2), 0)::text`,
+      })
+      .from(reviews)
+      .where(eq(reviews.productId, productId));
+
+    await db
+      .update(products)
+      .set({
+        reviewCount: aggregate.reviewCount,
+        rating: aggregate.rating,
+      })
+      .where(eq(products.id, productId));
 
     return Response.json(
       {
