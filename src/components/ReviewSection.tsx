@@ -46,13 +46,13 @@ export function ReviewSection({ productId, initialReviews }: { productId: number
       {showForm && (
         <form onSubmit={submit} className="mt-8 space-y-4 rounded-2xl border border-line bg-surface/50 p-6">
           <div className="grid gap-4 sm:grid-cols-2">
-            <div><label className="label">Your name</label><input className="input" value={form.author} onChange={(e) => setForm((f) => ({ ...f, author: e.target.value }))} placeholder="Anonymous Hermit" /></div>
-            <div><label className="label">Rating</label><select className="input" value={form.rating} onChange={(e) => setForm((f) => ({ ...f, rating: Number(e.target.value) }))}>
+            <div><label className="label" htmlFor="review-author">Your name</label><input id="review-author" className="input" value={form.author} onChange={(e) => setForm((f) => ({ ...f, author: e.target.value }))} placeholder="Anonymous Hermit" /></div>
+            <div><label className="label" htmlFor="review-rating">Rating</label><select id="review-rating" className="input" value={form.rating} onChange={(e) => setForm((f) => ({ ...f, rating: Number(e.target.value) }))}>
               {[5, 4, 3, 2, 1].map((r) => <option key={r} value={r} className="bg-ink">{r} stars</option>)}
             </select></div>
           </div>
-          <div><label className="label">Title</label><input className="input" value={form.title} onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))} placeholder="A sacred object" /></div>
-          <div><label className="label">Review</label><textarea className="input min-h-28 resize-y" value={form.body} onChange={(e) => setForm((f) => ({ ...f, body: e.target.value }))} placeholder="Tell the congregation…" /></div>
+          <div><label className="label" htmlFor="review-title">Title</label><input id="review-title" className="input" value={form.title} onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))} placeholder="A sacred object" /></div>
+          <div><label className="label" htmlFor="review-body">Review</label><textarea id="review-body" className="input min-h-28 resize-y" value={form.body} onChange={(e) => setForm((f) => ({ ...f, body: e.target.value }))} placeholder="Tell the congregation…" /></div>
           {status === "error" && <p className="text-sm text-blood">Something went wrong. Try again.</p>}
           <button type="submit" disabled={status === "sending"} className="btn-gold">{status === "sending" ? "Consecrating…" : "Submit Review"}</button>
         </form>
