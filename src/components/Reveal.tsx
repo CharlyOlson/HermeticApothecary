@@ -22,12 +22,9 @@ export function Reveal({ children, delay = 0, className }: RevealProps) {
     return () => observer.disconnect();
   }, []);
 
-  const style: CSSProperties = {
-    transitionDelay: `${delay}ms`,
-    opacity: visible ? 1 : 0,
-    transform: visible ? "translateY(0)" : "translateY(16px)",
-    transition: "opacity 0.6s ease, transform 0.6s ease",
-  };
+  const style: CSSProperties = { transitionDelay: `${delay}ms` };
 
-  return <div ref={ref} style={style} className={className}>{children}</div>;
+  const classes = `reveal ${visible ? "is-visible" : ""}${className ? ` ${className}` : ""}`;
+
+  return <div ref={ref} style={style} className={classes}>{children}</div>;
 }
