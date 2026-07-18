@@ -17,11 +17,11 @@ export function ProductGallery({ seed, category, name }: ProductGalleryProps) {
         <ProductArt seed={seed} category={category} index={selectedIndex} className="h-full w-full object-cover" />
       </div>
       <div className="grid grid-cols-4 gap-2">
-        {[1, 2, 3, 4].map((i) => (
+        {[0, 1, 2, 3].map((i) => (
           <button
             key={i}
             type="button"
-            aria-label={`View ${name} artwork variation ${i}`}
+            aria-label={`View ${name} artwork variation ${i + 1}`}
             onClick={() => setSelectedIndex(i)}
             aria-pressed={selectedIndex === i}
             className={`relative aspect-square overflow-hidden rounded-lg border border-line transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${selectedIndex === i ? "opacity-100" : "opacity-60 hover:opacity-100"}`}
