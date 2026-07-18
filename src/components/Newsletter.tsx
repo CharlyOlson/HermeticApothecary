@@ -9,8 +9,8 @@ export function Newsletter() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (submitting) return;
     const nextEmail = email.trim();
-    if (!nextEmail || submitting) return;
 
     setSubmitting(true);
     setError("");
@@ -24,7 +24,7 @@ export function Newsletter() {
       setSent(true);
       setEmail("");
     } catch {
-      setError("Could not subscribe right now.");
+      setError("Failed to subscribe. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -33,7 +33,9 @@ export function Newsletter() {
   if (sent) return <p className="text-sm text-gold">You&apos;re in the conclave. ✦</p>;
   return (
     <div className="space-y-2">
-      <p className="min-h-5 text-sm text-red-400" aria-live="polite">{error}</p>
+      <div className="min-h-5" aria-live="polite">
+        {error ? <p className="text-sm text-blood">{error}</p> : null}
+      </div>
       <form onSubmit={submit} className="flex gap-2">
         <input type="email" aria-label="Email address" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" className="input flex-1 text-sm" required />
         <button type="submit" className="btn-gold px-4 text-sm" disabled={submitting}>
